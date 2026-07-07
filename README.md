@@ -4,6 +4,8 @@
 
 Oxford DPhil (Clarendon Scholar) · joint first author in *Nature Communications* · 11 peer-reviewed papers. Built on the first automation team at **Retro Biosciences**, alongside the creator of PyLabRobot. Methods work spans epigenomics, low-input sequencing, and assay benchmarking.
 
+Most disease risk is regulatory and cell-type-specific: GWAS loci sit in non-coding DNA whose meaning shifts by cell type. My through-line is mapping that layer (transcription-factor binding and non-coding regulation at single-cell resolution) and automating it, so a risk locus becomes a cell-type-specific mechanism and a target.
+
 > **Currently building autonomous, senior-scientist omics.** Any sample from intake to interpretation at the principal bar, encoding the tacit *laboratory-intelligence layer* so biology runs reproducibly, at scale.
 
 ---
