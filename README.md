@@ -1,8 +1,8 @@
-# Di Hu · building autonomous labs
+# Di Hu &middot; building autonomous labs
 
 **Full-stack omics scientist:** wet lab, computation, and automation.
 
-Oxford DPhil (Clarendon Scholar) · joint first author in *Nature Communications* · 11 peer-reviewed papers. Built on the first automation team at **Retro Biosciences**, alongside the creator of PyLabRobot. Methods work spans epigenomics, low-input sequencing, and assay benchmarking.
+Oxford DPhil (Clarendon Scholar) &middot; joint first author in *Nature Communications* &middot; 11 peer-reviewed papers. Built on the first automation team at **Retro Biosciences**, alongside the creator of PyLabRobot. Methods work spans epigenomics, low-input sequencing, and assay benchmarking.
 
 I automate single-cell omics end to end, from sample intake to interpretation, as a closed loop: QC is measured upfront and gates the run, physical execution is checked (liquid-handling accuracy, computer vision on bench video), and the analysis is scored against known ground truth. Everything here runs in the PyLabRobot simulator with no hardware attached.
 
@@ -44,7 +44,7 @@ Eval-first: plant known ground truth, run the method blind, score the recovery. 
 
 ### Focus
 
-Autonomous wet-lab execution · low-input epigenomics · PyLabRobot on Hamilton / Opentrons / Tecan · computer vision for lab video · instruments as agent-accessible tools.
+Autonomous wet-lab execution &middot; low-input epigenomics &middot; PyLabRobot on Hamilton / Opentrons / Tecan &middot; computer vision for lab video &middot; instruments as agent-accessible tools.
 
 ---
 
