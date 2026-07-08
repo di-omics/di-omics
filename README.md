@@ -14,8 +14,8 @@ Most disease risk is regulatory and cell-type-specific: GWAS loci sit in non-cod
 
 Every repo here has to clear a benchmark on **both** axes at once:
 
-- **The bio bar** is a number a senior scientist recognizes: recovery against a spiked ground truth, liquid-handling CV%, yield, coverage, lineage-call accuracy.
-- **The AI bar** is the eval that makes it an environment an agent can be trained and graded in: blind method runs, instruments driven as tools, closed-loop recovery, spatial verification of physical execution from video.
+- **The bio bar** is a number a senior scientist recognizes, and it covers both halves: the physical biology and chemistry ran (liquid-handling CV%, yield, verified not assumed) and the bioinformatics recovers ground truth (recovery, coverage, lineage-call accuracy), scored on a statistical framework fixed before the run.
+- **The AI bar** is the eval that makes it an environment an agent can be trained and graded in: blind method runs, instruments driven as tools, physical-AI QC baked in, closed-loop feedback with agentic correction, spatial verification of physical execution from video.
 
 | Capability | Bio bar (a scientist checks) | AI bar (the eval) | Graded by | Human / expert in loop |
 | --- | --- | --- | --- | --- |
@@ -26,7 +26,7 @@ Every repo here has to clear a benchmark on **both** axes at once:
 | [**plr-clarity**](https://github.com/di-omics/plr-clarity) · (sci)TIP-seq on Hamilton STAR | Rhodamine-B validation ladder, real deck | plan text compiled into a runnable method | validation tier reached | expert signs off each tier |
 | [**lab-cv**](https://github.com/di-omics/lab-cv) · spatial AI on bench video | wells filled / empty, pipetting correct | ROI motion QC, detection on protocol video | ground-truth-validated, CPU-only | reviewer adjudicates edge cases |
 
-*Hard numbers live in the benchmark scoreboard and get pushed up one green cell at a time.*
+**[Live benchmark scoreboard](https://di-omics.github.io/benchmarks/)**: the two bars, the infra that proves them, and the anti-fooling guardrails. Hard numbers get pushed up one green cell at a time.
 
 ---
 
