@@ -1,50 +1,31 @@
-# Di Hu &middot; building autonomous labs
+# Di Hu
 
-**Full-stack omics scientist:** wet lab, computation, and automation.
+**Full-stack biologist building autonomous labs.**
 
-Oxford DPhil (Clarendon Scholar) &middot; joint first author in *Nature Communications* &middot; 11 peer-reviewed papers. Built on the first automation team at **Retro Biosciences**, alongside the creator of PyLabRobot. Methods work spans epigenomics, low-input sequencing, and assay benchmarking.
+Wet lab, automation, computation, ML. I encode expert judgment into autonomous execution so biological R&D runs faster, cheaper, and more reproducibly.
 
-I automate single-cell omics end to end, from sample intake to interpretation, as a closed loop: QC is measured upfront and gates the run, physical execution is checked (liquid-handling accuracy, computer vision on bench video), and the analysis is scored against known ground truth. Everything here runs in the PyLabRobot simulator with no hardware attached.
-
-Most disease risk is regulatory and cell-type-specific: GWAS loci sit in non-coding DNA whose meaning shifts by cell type. My work maps that layer (transcription-factor binding and non-coding regulation at single-cell resolution) and automates it, so a risk locus becomes a cell-type-specific mechanism and a target.
+Oxford PhD &middot; joint first author in Nature Communications &middot; contributor to open-source PyLabRobot.
 
 ---
 
+### What's here
+
+Open-source autonomous-lab infrastructure built on PyLabRobot: instrument reverse-engineering, end-to-end single-cell omics, epigenomics, robotic manipulation, and an MCP layer so agents can drive the bench. Simulation-first and validated on real hardware, with plant-and-recover checks so the results are honest, not cherry-picked.
+
 ### Selected work
 
-| Repo | What it is | How it is evaluated |
-| --- | --- | --- |
-| [**fullstack-omics**](https://github.com/di-omics/fullstack-omics) | FLASH-seq scRNA-seq and single-cell WGS, procurement to analysis | Runs end to end in the PyLabRobot simulator; scWGS module at 10/10 tests |
-| [**plr-mcp**](https://github.com/di-omics/plr-mcp) | PyLabRobot instruments (liquid handlers, readers, cyclers, shakers) as MCP tools | MCP tool-call round-trip; CI on Python 3.10-3.13 |
-| [**omics-demos**](https://github.com/di-omics/omics-demos) | Nine self-contained demos: RNA-seq, UMI dedup, CNV, variant calling, EM-seq, demux, PyLabRobot sim | Each plants known ground truth, runs blind, scores recovery |
-| [**plr-minimum-effective**](https://github.com/di-omics/plr-minimum-effective) | Minimal effective reaction search via Bayesian optimization | Cross-validated, held-out recovery |
-| [**plr-clarity**](https://github.com/di-omics/plr-clarity) | Automated (sci)TIP-seq on a Hamilton STAR in PyLabRobot | Rhodamine-B validation ladder; plan-text-to-method compiler |
-| [**lab-cv**](https://github.com/di-omics/lab-cv) | Offline computer vision for bench video: ROI motion QC and detection | Ground-truth-validated, CPU-only |
+- **plr-tested**: PyLabRobot protocols run on real hardware, not just in sim. Hamilton STAR (ResolveDNA PTA/WGA, amplicon-seq), validated on the instrument.
+- **plr-reverse-engineer**: playbooks and tooling to bring no-API instruments (BD FACSMelody, Agilent 6530 Q-TOF, Biotage V-10) under PyLabRobot control.
+- **fullstack-omics**: full-stack autonomous single-cell omics end to end in the PyLabRobot simulator. scRNA-seq (FLASH-seq UMI) and scWGS (ResolveDNA PTA + NEBNext), with analysis.
+- **plr-epigenome**: automated (sci)TIP-seq on a Hamilton STAR. Shared infra, a Rhodamine-B validation ladder, and a statement-of-work compiler (plan text to runnable, validated method).
+- **plr-lab-robot**: onboard a robotic arm in the PyLabRobot simulator, then add eye-in-hand computer vision and dexterous manipulation (uncapping). CPU-only, plant-and-recover.
+- **plr-mcp**: a Model Context Protocol server for PyLabRobot, so any agent can drive liquid handlers, plate readers, thermocyclers, and heater-shakers.
 
-### How QC works
+I also contributed a BD FACSMelody cell-sorter backend to the core PyLabRobot project.
 
-Before an assay commits reagents, two readouts gate the run:
+### Stack
 
-- **Rhodamine B on the plate reader** for per-well liquid-handling accuracy and precision (CV%).
-- **Qubit or PicoGreen on a small aliquot** for DNA yield and concentration.
-
-Measure first, gate on the number, then run. QC sits at the front, not in the post-mortem.
-
-### How I build
-
-Eval-first: plant known ground truth, run the method blind, score the recovery. Each repo gates its claim on a number rather than a screenshot, and marks where a learned model would earn its keep. Protocol values are sourced, never invented; unknowns stay marked as such. Notes on how each repo is evaluated: [di-omics.github.io/benchmarks](https://di-omics.github.io/benchmarks/).
-
-### More work
-
-| Repo | What it is |
-| --- | --- |
-| [**blastocyst-if**](https://github.com/di-omics/blastocyst-if) | 3D immunofluorescence for whole-mount preimplantation blastocysts: Cellpose-SAM segmentation, per-nucleus quant, EPI/PE/TE lineage classification. Synthetic data, no GPU. |
-| [**ot-flex-automation**](https://github.com/di-omics/ot-flex-automation) | Opentrons Flex genomics library prep: walkaway WGS (ResolveDNA), EM-seq epigenetic clock, low-input TIP-seq. |
-| [**awesome-wetlab-cv**](https://github.com/di-omics/awesome-wetlab-cv) | A curated map of computer vision for the wet lab and autonomous science: foundation models, bio-image segmentation, cell tracking, VLA robotics. |
-
-### Focus
-
-Autonomous wet-lab execution &middot; low-input epigenomics &middot; PyLabRobot on Hamilton / Opentrons / Tecan &middot; computer vision for lab video &middot; instruments as agent-accessible tools.
+Python &middot; PyLabRobot (Hamilton, Opentrons, Tecan) &middot; agent harnesses (PydanticAI, MCP) &middot; robotic manipulation and computer vision &middot; single-cell and low-input NGS.
 
 ---
 
