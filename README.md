@@ -1,6 +1,6 @@
 # Di Hu
 
-**Full-stack biologist building Clair, the laboratory intelligence layer for autonomous labs.**
+**full-stack biologist • building autonomous labs**
 
 Clair turns a scientist's protocol, acceptance criteria, and failure responses into gated, auditable execution across hardware a lab already owns. The work here is the public developer prototype and evidence stack behind that thesis.
 
