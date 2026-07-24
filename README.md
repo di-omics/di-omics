@@ -2,11 +2,11 @@
 
 **full-stack biologist • building autonomous labs**
 
-Clair turns a scientist's protocol, acceptance criteria, and failure responses into gated, auditable execution across hardware a lab already owns. The work here is the public developer prototype and evidence stack behind that thesis.
+My work turns protocols, acceptance criteria, and failure responses into gated, auditable execution across laboratory hardware. This profile is a public portfolio of reusable automation, omics, robotics, and evaluation systems.
 
 ## Current evidence boundary
 
-Some named operations have been executed on physical instruments under human supervision. Most of the portfolio remains simulated. There is no customer deployment and no full wet end-to-end biological endpoint yet. Work performed on employer-owned equipment is founder capability evidence, not a Clair deployment.
+Some named operations have been executed on physical instruments under human supervision. Most of the portfolio remains simulated. There is no customer deployment and no full wet end-to-end biological endpoint yet. Each repository states its own evidence and validation boundary.
 
 ## Start here
 
@@ -24,7 +24,7 @@ Some named operations have been executed on physical instruments under human sup
 | Agent execution | [plr-mcp](https://github.com/di-omics/plr-mcp) | Gives agents typed, discoverable laboratory tools. |
 | Physical evidence | [plr-tested](https://github.com/di-omics/plr-tested) | Records named hardware operations run under supervision. |
 | Instrument expansion | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | Captures, decodes, and guarded-replays no-API instrument commands. |
-| Genomics wedge | [fullstack-omics](https://github.com/di-omics/fullstack-omics) | Simulator-only single-cell RNA-seq and WGS workflows. |
+| Omics workflows | [fullstack-omics](https://github.com/di-omics/fullstack-omics) | Simulator-only scRNA-seq and whole-genome sequencing workflows. |
 | Evaluation | [omics-demos](https://github.com/di-omics/omics-demos) | Synthetic, ground-truth demos that run blind and score recovery. |
 
 ## How to read validation claims
