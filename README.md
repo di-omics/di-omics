@@ -10,9 +10,26 @@ Some named operations have been executed on physical instruments under human sup
 
 ## Start here
 
-- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** — computes what a reference workflow can actually automate, supervise, block, or break, and stops at unsupported steps.
+- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** — computes whether a lab can close a loop from hypothesis to evidence, across all four legs, and names the one that breaks.
 - **[plr-mcp](https://github.com/di-omics/plr-mcp)** — exposes PyLabRobot devices as agent-callable tools, with simulation by default and explicit execution gates.
 - **[plr-tested](https://github.com/di-omics/plr-tested)** — keeps supervised physical-instrument run cards and observed failures as evidence.
+
+## Four legs, not one number
+
+Executing a protocol is the leg everyone measures. A lab that executes perfectly and cannot
+tell a good plate from a bad one is not running an experiment, it is moving liquid. Closing
+a single loop takes four things, and they fail independently:
+
+| Leg | The question | What failure means |
+| --- | --- | --- |
+| **Execute** | can the machine perform the step? | reverse-engineering work |
+| **Measure** | does a result arrive, from the right assay? | an instrument that returns a usable number |
+| **Decide** | would anything notice when it goes wrong? | a detection path for failures that destroy material |
+| **Record** | could it be proven and replayed afterwards? | barcodes, or an arm that reports its moves |
+
+On the single-cell genomics reference workflow, all four currently break, for four different
+reasons. Collapsing that into one autonomy percentage would hide which budget to spend.
+`autonomous-lab loop` computes it.
 
 ## How the stack fits together
 
@@ -20,7 +37,7 @@ Some named operations have been executed on physical instruments under human sup
 
 | Layer | Repository | Current role |
 | --- | --- | --- |
-| Evidence ledger | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | Computes the real autonomy boundary and the next blocking gate. |
+| Loop closure | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | Computes all four legs, the autonomy boundary, and the next blocking gate. |
 | Agent execution | [plr-mcp](https://github.com/di-omics/plr-mcp) | Gives agents typed, discoverable laboratory tools. |
 | Physical evidence | [plr-tested](https://github.com/di-omics/plr-tested) | Records named hardware operations run under supervision. |
 | Instrument expansion | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | Captures, decodes, and guarded-replays no-API instrument commands. |
