@@ -1,44 +1,94 @@
 # Di Hu
 
-**full-stack biologist • building autonomous labs**
+**Building [Clair](https://clair.bio) - the intelligence layer for autonomous labs.**
 
-My work turns protocols, acceptance criteria, and failure responses into gated, auditable execution across laboratory hardware. This profile is a public portfolio of reusable automation, omics, robotics, and evaluation systems.
+I am a full-stack biologist working across wet-lab assays, genomics, automation,
+instrument control, computer vision, and scientific ML. I turn protocols, acceptance
+criteria, and expert failure responses into gated, auditable execution across hardware a
+lab already owns.
 
-## Current evidence boundary
+[Clair](https://clair.bio) | [Portfolio and writing](https://reinhaudt.com) |
+[LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/)
 
-Some named operations have been executed on physical instruments under human supervision. Most of the portfolio remains simulated. There is no customer deployment and no full wet end-to-end biological endpoint yet. Each repository states its own evidence and validation boundary.
+## The thesis
+
+Laboratory autonomy is not a prompt-to-protocol problem. It fails at physical state,
+evidence, exception handling, and recovery: whether a sample is recoverable, whether a
+QC result is real, and whether the next action is safe or useful.
+
+My stack separates proposal from permission:
+
+`scientist or model proposes -> deterministic evidence gates decide -> controller executes -> measurements and decisions enter an audit ledger`
+
+A simulator result never becomes a hardware claim by wording alone. Missing evidence
+stops the run.
 
 ## Start here
 
-- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** — computes what a reference workflow can actually automate, supervise, block, or break, and stops at unsupported steps.
-- **[plr-mcp](https://github.com/di-omics/plr-mcp)** — exposes PyLabRobot devices as agent-callable tools, with simulation by default and explicit execution gates.
-- **[plr-tested](https://github.com/di-omics/plr-tested)** — keeps supervised physical-instrument run cards and observed failures as evidence.
+- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** - evidence and
+  permission for autonomous workflows: QC and vision gates, recovery decisions, sample
+  provenance, throughput, and an honest step-by-step execution boundary.
+- **[plr-mcp](https://github.com/di-omics/plr-mcp)** - typed PyLabRobot tools for agents,
+  with simulation by default, confirmation gates, and opt-in hardware backends.
+- **[plr-tested](https://github.com/di-omics/plr-tested)** - supervised physical-instrument
+  run cards, exact confirmation tokens, observed results, and known failures.
+- **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** - capture,
+  decode, and guarded replay for instruments with no usable API.
 
-## How the stack fits together
+Run the public closed-loop prototype:
 
-`protocol + acceptance criteria → execution gates → MCP/device backend → measurements → run and decision ledger`
+```bash
+pip install 'autonomous-lab @ git+https://github.com/di-omics/autonomous-lab'
+autonomous-lab loop --scenario pass
+autonomous-lab loop --scenario vision_error
+autonomous-lab loop --scenario missing_evidence
+autonomous-lab throughput --samples 96
+```
 
-| Layer | Repository | Current role |
+The failing scenarios return non-zero on purpose. They select a versioned recovery or
+stop with the sample still at the prior station, then verify the hash-chained run record.
+All bundled observations, acceptance ranges, and timings are labeled synthetic or
+assumed.
+
+## How the portfolio fits together
+
+| Capability | Primary repositories | What is implemented |
 | --- | --- | --- |
-| Evidence ledger | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | Computes the real autonomy boundary and the next blocking gate. |
-| Agent execution | [plr-mcp](https://github.com/di-omics/plr-mcp) | Gives agents typed, discoverable laboratory tools. |
-| Physical evidence | [plr-tested](https://github.com/di-omics/plr-tested) | Records named hardware operations run under supervision. |
-| Instrument expansion | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | Captures, decodes, and guarded-replays no-API instrument commands. |
-| Omics workflows | [fullstack-omics](https://github.com/di-omics/fullstack-omics) | Simulator-only scRNA-seq and whole-genome sequencing workflows. |
-| Evaluation | [omics-demos](https://github.com/di-omics/omics-demos) | Synthetic, ground-truth demos that run blind and score recovery. |
+| Laboratory intelligence | [autonomous-lab](https://github.com/di-omics/autonomous-lab), [plr-minimum-effective](https://github.com/di-omics/plr-minimum-effective) | Versioned expert gates, assay-QC decisions, bounded recovery, optimization under acceptance criteria |
+| Python control and orchestration | [plr-mcp](https://github.com/di-omics/plr-mcp), [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer), [ot-flex-automation](https://github.com/di-omics/ot-flex-automation) | Typed tools, guarded device backends, no-API command recovery, explicit off-deck handoffs |
+| Physical execution evidence | [plr-tested](https://github.com/di-omics/plr-tested), [benchmarks](https://github.com/di-omics/benchmarks) | Named run cards, confirmation boundaries, validation status, observed failures, evaluation criteria |
+| Computer vision and robot recovery | [lab-cv](https://github.com/di-omics/lab-cv), [plr-lab-robot](https://github.com/di-omics/plr-lab-robot), [awesome-wetlab-cv](https://github.com/di-omics/awesome-wetlab-cv) | Offline lab-video QC, synthetic hand-eye and recovery benchmarks, an eval-first map of wet-lab vision tools |
+| Omics workflows and analysis | [fullstack-omics](https://github.com/di-omics/fullstack-omics), [omics-demos](https://github.com/di-omics/omics-demos), [ml-bio-eval](https://github.com/di-omics/ml-bio-eval) | Simulator-only scRNA-seq and WGS flows, synthetic ground truth, bioinformatics and closed-loop evals |
+| Integrated world-model demos | [bay-hack](https://github.com/di-omics/bay-hack), [robotics-devkit](https://github.com/di-omics/robotics-devkit) | Sim-first composition across planning, tools, robot bridges, testing agents, and project memory |
 
-## How to read validation claims
+## Current evidence boundary
 
-- **Simulated** — exercised without attached instruments.
-- **Hardware-executed under supervision** — a named interaction ran on a physical instrument and its observed result is recorded.
-- **Wet/bio-validated** — measured biological data met a stated acceptance criterion.
+Some named STAR, ODTC, HHS, and Tecan operations have been executed on physical
+instruments under human supervision. The exact run cards and caveats live in
+`plr-tested`; `autonomous-lab doctor` checks their paths and confirmation tokens against
+the real checkout.
 
-Unknowns remain unknown until evidence clears the next gate. A simulator result never becomes a hardware or biological claim by wording alone.
+Most of the portfolio remains simulated. There is no customer deployment, no revenue,
+and no full wet end-to-end biological endpoint yet. The public genomics reference flow
+still stops at its first manual boundary, and its no-API command maps remain undecoded.
+That is the point of the ledger: unknowns stay unknown until evidence clears the next
+gate.
+
+Validation labels used across the portfolio:
+
+- **Simulated** - exercised without attached instruments.
+- **Dry-run on hardware** - motion or control path ran without the full wet assay.
+- **Hardware-executed under supervision** - a named physical interaction ran and its
+  observed result is recorded.
+- **Wet/bio-validated** - measured biological data met a stated acceptance criterion.
+- **Independently reproduced** - a bounded workflow passed outside the development setup.
 
 ## About
 
-Oxford PhD · joint first author in *Nature Communications* · wet lab, genomics, automation, computation, and ML. I opened an upstream PyLabRobot PR for BD FACSMelody support; it is unmerged and not hardware-validated.
+Oxford PhD; joint first author in *Nature Communications*. I have built wet-lab assays,
+omics analysis, and automation across aging biology, genomics, and scientific tooling.
+I now write the instrument and orchestration layers myself so tacit scientific judgment
+does not disappear between assay, software, and robotics teams.
 
-Python · PyLabRobot · MCP and agent harnesses · robotic manipulation and computer vision · single-cell and low-input NGS.
-
-[LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) · [Writing / thesis](https://reinhaudt.com)
+Python | PyLabRobot | MCP and agent harnesses | robotic manipulation and computer vision |
+single-cell and low-input NGS | assay QC and bioinformatics
