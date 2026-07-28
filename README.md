@@ -70,68 +70,78 @@ On the single-cell genomics reference workflow, all four currently break, for fo
 reasons. Collapsing that into one autonomy percentage would hide which budget to spend.
 `autonomous-lab loop` computes it.
 
-## Three capability areas
+## The stack
 
-### 1. Seeing — computer vision for the bench
+An autonomous lab is not one machine, and the pieces fail independently. This is the order
+they have to be built in, because each one is what makes the next one meaningful.
 
-What a camera can verify, and the hard boundary of what no camera ever will. That boundary
-is a claim about physics rather than model quality: no amount of training data separates a
-well of active enzyme from one of denatured enzyme, because the photons are identical. Four
-of the reference lab's six silent failures sit on that side of the line, so **buying cameras
-would not fix them** — and a plan that budgets for cameras to solve them is spending on the
-wrong sensor.
+**1 · Move it.** Multi-instrument orchestration and the arm that carries plates between
+boxes. One plate at a time wastes the instruments, so the moment a second enters, a set of
+constraints appears that no single-run report can see: two plates want the same liquid
+handler, a human is needed at 2am, a finished plate sits on a deck nobody can clear.
+`autonomous-lab schedule` computes what serializes without inventing a single duration --
+the serialization point is whichever instrument owns the most steps, which is true at any
+speed. It also prices the arm honestly: on the reference protocol a plate mover clears
+**5 of 22 stalls and none of the 8 undecoded commands.** Which purchase helps is computable
+before the order rather than after it.
 
-- [lab-cv](https://github.com/di-omics/lab-cv) — plate/well detection, well-state
-  classification, ROI tracking, and camera-verified liquid handling. Classical baselines
-  scored against planted ground truth on synthetic renders, CPU-only. The learned-model
-  seams (RF-DETR, SAM 2, VLM backends) are declared interfaces, not shipped weights.
-- [spatial-flow](https://github.com/di-omics/spatial-flow) — operations platform for a
-  high-throughput spatial-biology lab: specimen→core→placement→slide lineage, and a TMA
-  randomization planner that spreads each patient across slides to suppress batch effects.
-  Synthetic data throughout.
-- [awesome-wetlab-cv](https://github.com/di-omics/awesome-wetlab-cv) — curated models,
-  trackers, and robot stacks for labs that see, decide, and act.
+**2 · See it, and know what seeing cannot do.** Deploy the best available vision, and be
+precise about its ceiling. `vision` sorts conditions into `visible`, `visible_indirect`, and
+`invisible` -- and that last boundary is a claim about **physics, not model quality**. No
+amount of training data separates a well of active enzyme from one of denatured enzyme,
+because the photons are identical.
 
-### 2. Acting — arms, skills, and workcells
+**3 · Gate what vision cannot reach.** This is the composition that makes the whole thing
+work, and it is why the two are one layer rather than two. Where a camera is physically
+incapable, an assay is the *only* remaining option -- a plate read, a bioanalyzer trace, a
+quantification step. So an invisible failure with no gate behind it is uncovered, and no CV
+budget will ever change that. Deploying a newer model has a ceiling, and the ceiling is
+computable in advance.
 
-- [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) — a simulation backend for
-  PyLabRobot's arm API, which upstream ships without one, so the arm interface can be
-  exercised with no physical robot. Eye-in-hand calibration, vision-guided pick correction,
-  and a decap/recap skill that models thread-following as discrete rotation plus lift.
-- [robotics-devkit](https://github.com/di-omics/robotics-devkit) — the code → simulation →
-  real-robot ladder as a reusable plugin and per-repo template.
-- [bay-hack](https://github.com/di-omics/bay-hack) — verified tube access: a robot uncaps a
-  tube, independently verifies the cap is off, presents it for pipetting, recaps, and
-  verifies closure. Ambiguity triggers recovery or a safe stop. The rule is enforced in
-  code and in the sealed receipt: no verified opening, no pipetting.
+**4 · Close the loop.** Measure, compare, correct. Each of those has a specific way of being
+fake, and the load-bearing one is latency: a measurement taken after the material is
+consumed cannot steer anything however accurate it is. It is a post-mortem wearing the
+costume of a control loop.
 
-### 3. Knowing — orchestration, sample identity, and provenance
+**5 · Keep it running.** Instruments wear, calibrations expire, consumables deplete. A
+schedule that ignores this is a schedule for the first week. The insurance question is not
+"when will it fail" -- predicting that needs reliability data nobody here has -- but *what
+is this instrument currently entitled to be trusted with*, and does a planned campaign cross
+a service boundary mid-run. Nothing downstream repairs a plate that started before a
+calibration expired and finished after.
 
-- [autonomous-lab](https://github.com/di-omics/autonomous-lab) — the loop-closure layer.
-  Costs every step against the real state of the code, computes which QC gates can even be
-  evaluated, which failures nothing would notice, and what could be proven afterwards.
-- **Sample identity** (`autonomous-lab lineage`) — every other layer tracks *containers*;
-  no experiment's conclusion is about a plate. This tracks the claim the science actually
-  makes. The two graphs come apart at pooling: pool 96 wells without indexing first and no
-  barcode reader, no camera, and no amount of decoding recovers which cell produced which
-  read. It also finds that the reference protocol's only quantification happens *after*
-  pooling, so a failure confined to one well moves the number by a ninety-sixth and fails
-  no gate.
-- [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) — capture,
-  decode, and guarded replay for no-API instruments. Incomplete maps stay blocked from
-  actuation.
-- [plr-mcp](https://github.com/di-omics/plr-mcp) — typed, discoverable lab tools for agents,
-  with the arming model enforced rather than documented.
+**6 · Then the intelligence layer.** Once the infrastructure holds, the thing that is
+actually missing is the transfer itself: **a scientist demonstrating an operation, and a
+machine measured against that demonstration.** That is the step between "the robot executes
+the script" and "the robot performs the task as well as the person who taught it."
+
+The honest core of it is that an expert demonstration is *data, not authority*. A scientist
+doing something twice is not a specification -- it is two observations with a spread, and
+the spread is the information. Most operations have no expert envelope at all, and that list
+is the real backlog of an automation programme. Nobody writes it down. This does.
+
+## Repositories
+
+| | |
+| --- | --- |
+| [autonomous-lab](https://github.com/di-omics/autonomous-lab) | the layer that computes all of the above and names which leg breaks |
+| [plr-mcp](https://github.com/di-omics/plr-mcp) | typed, agent-callable lab tools; the arming model is enforced in code, not documented |
+| [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | capture, decode, guarded replay for no-API instruments; incomplete maps stay blocked from actuation |
+| [plr-tested](https://github.com/di-omics/plr-tested) | supervised physical-instrument run cards and observed failures, kept as evidence |
+| [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) | a simulation backend for PyLabRobot's arm API, which upstream ships without |
+| [lab-cv](https://github.com/di-omics/lab-cv) | plate/well detection, state classification, tracking, camera-verified liquid handling |
+| [spatial-flow](https://github.com/di-omics/spatial-flow) | spatial-biology lab operations: specimen lineage and TMA batch-balance planning |
+| [awesome-wetlab-cv](https://github.com/di-omics/awesome-wetlab-cv) | curated CV for labs that see, decide, and act -- with CI that checks every link |
+| [bay-hack](https://github.com/di-omics/bay-hack) | verified tube access: no verified opening, no pipetting -- enforced in code and in the sealed receipt |
 
 ## What is not built yet
 
-Naming this is the same discipline as the rest of the portfolio. **Multi-instrument workcell
-orchestration does not exist in any of these repos.** Plate movers, incubator and reader
-handoffs, resource contention, and concurrent scheduling appear in prose and in coordinate
-names; none of them is modeled in code. `autonomous-lab throughput` contains a real
-pipelined scheduling model and correctly refuses to produce a plates-per-day number,
-because 18 of 18 steps have never been timed. That refusal is the honest state, and closing
-it is the next substantial piece of work.
+Naming this is the same discipline as the rest. The intelligence layer is the newest and
+least proven part of the stack, and most of it is simulated. There is no sustained
+production evidence here and no wet biological endpoint. The published record does not have
+one either: **no cited system demonstrates integrated multi-domain autonomous operation at a
+production rate**, and `autonomous-lab evidence` will not return a citation that claims
+otherwise.
 
 ## About
 
