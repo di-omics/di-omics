@@ -9,15 +9,15 @@ automation, omics, robotics, and evaluation systems.
 ## The bet
 
 Autonomous labs are not waiting on a vendor to ship AI-native labware. The instruments
-already on benches are enough — I have been reverse-engineering them into Python one
+already on benches are enough -- I have been reverse-engineering them into Python one
 command set at a time to prove it. What is actually missing is the layer above the
 hardware: **a way to encode a domain expert's judgment into autonomous execution, and to
 have that expert orchestrate the automation rather than operate it.**
 
 That layer is the hard part, and it is hard for a specific reason. A written protocol is
 not what an experienced scientist does; it is the subset that survived being written down.
-The rest — when a result is real, when a sample is still recoverable, when a clean-looking
-plate should be thrown away — lives in one head, gets applied a hundred times a week, and
+The rest -- when a result is real, when a sample is still recoverable, when a clean-looking
+plate should be thrown away -- lives in one head, gets applied a hundred times a week, and
 is exactly what fails to transfer when a lab automates. Buying a better robot does not
 touch it.
 
@@ -35,23 +35,24 @@ Most of the portfolio remains simulated. There is no customer deployment and no 
 end-to-end biological endpoint yet. Each repository states its own evidence and validation
 boundary, and the language is deliberately narrow:
 
-- **Simulated** — exercised without attached instruments.
-- **Hardware-executed under supervision** — a named interaction ran on a physical
+- **Simulated** -- exercised without attached instruments.
+- **Hardware-executed under supervision** -- a named interaction ran on a physical
   instrument and its observed result is recorded.
-- **Wet/bio-validated** — measured biological data met a stated acceptance criterion.
+- **Wet/bio-validated** -- measured biological data met a stated acceptance criterion.
 
 Unknowns stay unknown until evidence clears the next gate. A simulator result never becomes
 a hardware or biological claim by wording alone.
 
 ## Start here
 
-- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** — computes whether a lab
+- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab
   can close a loop from hypothesis to evidence, across all four legs, and names the one that
   breaks.
-- **[plr-mcp](https://github.com/di-omics/plr-mcp)** — exposes PyLabRobot devices as
+- **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- exposes PyLabRobot devices as
   agent-callable tools, simulation by default, with execution gates enforced in code.
-- **[plr-tested](https://github.com/di-omics/plr-tested)** — supervised physical-instrument
-  run cards and observed failures, kept as evidence.
+- **`plr-tested`** *(private)* -- supervised physical-instrument run cards and observed
+  failures, kept as evidence. Private because the work is high stakes, and a reader who
+  cannot inspect the evidence should not be shown a claim resting on it.
 
 ## Four legs, not one number
 
@@ -127,7 +128,7 @@ is the real backlog of an automation programme. Nobody writes it down. This does
 | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | the layer that computes all of the above and names which leg breaks |
 | [plr-mcp](https://github.com/di-omics/plr-mcp) | typed, agent-callable lab tools; the arming model is enforced in code, not documented |
 | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | capture, decode, guarded replay for no-API instruments; incomplete maps stay blocked from actuation |
-| [plr-tested](https://github.com/di-omics/plr-tested) | supervised physical-instrument run cards and observed failures, kept as evidence |
+| `plr-tested` *(private)* | supervised physical-instrument run cards and observed failures, kept as evidence |
 | [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) | a simulation backend for PyLabRobot's arm API, which upstream ships without |
 | [lab-cv](https://github.com/di-omics/lab-cv) | plate/well detection, state classification, tracking, camera-verified liquid handling |
 | [spatial-flow](https://github.com/di-omics/spatial-flow) | spatial-biology lab operations: specimen lineage and TMA batch-balance planning |
