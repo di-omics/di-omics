@@ -1,10 +1,45 @@
 # Di Hu
 
-**full-stack biologist • building autonomous labs**
+**full-stack biologist - building autonomous labs**
 
 My work turns protocols, acceptance criteria, and failure responses into gated, auditable
 execution across laboratory hardware. This profile is a public portfolio of reusable
 automation, omics, robotics, and evaluation systems.
+
+## What it is all for
+
+Every layer below exists to serve one number: **how much this lab learns per dollar per
+experimental cycle.** Stating that first changes what counts as progress. Throughput is not
+the goal, autonomy is not the goal, and neither is a robot that runs overnight. A lab that
+runs a thousand plates a day and cannot tell which of them is real has bought motion, not
+information.
+
+Three things cap that number, and they are not the ones usually shopped for.
+
+**The ceiling is set by design, not by spend.** If attribution to the unit you are asking
+about has been destroyed, a per-unit question is unanswerable at any budget: pool 96 wells
+without indexing first and no number of reads recovers which cell produced which molecule.
+If every gate that would produce a decision is unevaluable, the cycle yields data and no
+decision. Separating "buy more" from "this cannot work" is the most useful thing the stack
+computes.
+
+**The discount nobody applies is silent failure.** A campaign with destructive failure modes
+that nothing would catch does not yield its nominal information. Some fraction of its output
+is confidently wrong, and confidently wrong is worse than missing, because it gets acted on.
+
+**The binding constraint is usually not the one being priced.** Across execution,
+measurement, decision, record, detection coverage, instrument durability, and expert
+transfer, exactly one of them caps information per dollar at any moment. Computing which one
+tells you whether to build orchestration, repair an instrument, run a calibration, or go and
+find expertise.
+
+That last point is the procurement argument, and it is why this portfolio builds what it
+builds. **Orchestration is buildable.** Scheduling instruments, moving plates, tracking
+samples, and holding provenance are engineering with known shapes, and the code here does
+them. What is genuinely scarce, and therefore what is worth paying for, is **laboratory
+intelligence**: knowing what a result means, what to run next, when a clean-looking plate
+should be thrown away, and what a robot must prove before it is trusted with the step. That
+is the part that does not come in a box.
 
 ## The bet
 
@@ -76,7 +111,7 @@ reasons. Collapsing that into one autonomy percentage would hide which budget to
 An autonomous lab is not one machine, and the pieces fail independently. This is the order
 they have to be built in, because each one is what makes the next one meaningful.
 
-**1 · Move it.** Multi-instrument orchestration and the arm that carries plates between
+**1 / Move it.** Multi-instrument orchestration and the arm that carries plates between
 boxes. One plate at a time wastes the instruments, so the moment a second enters, a set of
 constraints appears that no single-run report can see: two plates want the same liquid
 handler, a human is needed at 2am, a finished plate sits on a deck nobody can clear.
@@ -86,32 +121,32 @@ speed. It also prices the arm honestly: on the reference protocol a plate mover 
 **5 of 22 stalls and none of the 8 undecoded commands.** Which purchase helps is computable
 before the order rather than after it.
 
-**2 · See it, and know what seeing cannot do.** Deploy the best available vision, and be
+**2 / See it, and know what seeing cannot do.** Deploy the best available vision, and be
 precise about its ceiling. `vision` sorts conditions into `visible`, `visible_indirect`, and
 `invisible` -- and that last boundary is a claim about **physics, not model quality**. No
 amount of training data separates a well of active enzyme from one of denatured enzyme,
 because the photons are identical.
 
-**3 · Gate what vision cannot reach.** This is the composition that makes the whole thing
+**3 / Gate what vision cannot reach.** This is the composition that makes the whole thing
 work, and it is why the two are one layer rather than two. Where a camera is physically
 incapable, an assay is the *only* remaining option -- a plate read, a bioanalyzer trace, a
 quantification step. So an invisible failure with no gate behind it is uncovered, and no CV
 budget will ever change that. Deploying a newer model has a ceiling, and the ceiling is
 computable in advance.
 
-**4 · Close the loop.** Measure, compare, correct. Each of those has a specific way of being
+**4 / Close the loop.** Measure, compare, correct. Each of those has a specific way of being
 fake, and the load-bearing one is latency: a measurement taken after the material is
 consumed cannot steer anything however accurate it is. It is a post-mortem wearing the
 costume of a control loop.
 
-**5 · Keep it running.** Instruments wear, calibrations expire, consumables deplete. A
+**5 / Keep it running.** Instruments wear, calibrations expire, consumables deplete. A
 schedule that ignores this is a schedule for the first week. The insurance question is not
 "when will it fail" -- predicting that needs reliability data nobody here has -- but *what
 is this instrument currently entitled to be trusted with*, and does a planned campaign cross
 a service boundary mid-run. Nothing downstream repairs a plate that started before a
 calibration expired and finished after.
 
-**6 · Then the intelligence layer.** Once the infrastructure holds, the thing that is
+**6 / Then the intelligence layer.** Once the infrastructure holds, the thing that is
 actually missing is the transfer itself: **a scientist demonstrating an operation, and a
 machine measured against that demonstration.** That is the step between "the robot executes
 the script" and "the robot performs the task as well as the person who taught it."
@@ -146,11 +181,11 @@ otherwise.
 
 ## About
 
-Oxford PhD · joint first author in *Nature Communications* · wet lab, genomics, automation,
+Oxford PhD / joint first author in *Nature Communications* / wet lab, genomics, automation,
 computation, and ML. I opened an upstream PyLabRobot PR for BD FACSMelody support; it is
 unmerged and not hardware-validated.
 
-Python · PyLabRobot · MCP and agent harnesses · robotic manipulation and computer vision ·
+Python / PyLabRobot / MCP and agent harnesses / robotic manipulation and computer vision -
 single-cell and low-input NGS.
 
-[LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) · [Writing / thesis](https://reinhaudt.com)
+[LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) / [Writing / thesis](https://reinhaudt.com)
