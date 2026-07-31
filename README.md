@@ -6,6 +6,20 @@ My work turns protocols, acceptance criteria, and failure responses into gated, 
 execution across laboratory hardware. This profile is a public portfolio of reusable
 automation, omics, robotics, and evaluation systems.
 
+## Capabilities
+
+| | | |
+| --- | --- | --- |
+| **Autonomous lab** | orchestration, QC gates, provenance, recovery, honest hardware boundaries | [autonomous-lab](https://github.com/di-omics/autonomous-lab) |
+| **Robotics** | arm control under PyLabRobot, eye-in-hand vision, instrument reverse engineering | [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) |
+| **Computer vision and image analysis** | detection, state, tracking, camera-verified execution, scored blind | [lab-cv](https://github.com/di-omics/lab-cv) |
+| **Spatial AI and world models** | action-conditioned prediction, abstention gates, the ceiling of what prediction resolves | `bench-world-model` *(in build)* |
+| **ML for biology** | protein design loops, Bayesian assay optimization, conformal QC | [ml-design-loops](https://github.com/di-omics/ml-design-loops) |
+| **Benchmarks and evals** | the metric each capability is scored on, and which numbers are still pending | [benchmarks](https://github.com/di-omics/benchmarks) |
+
+Each row states its own evidence boundary. Most of this is simulated, and every repository
+says so. A row with no link is a row with nothing to show yet.
+
 ## What it is all for
 
 Every layer below exists to serve one number: **how much this lab learns per dollar per
@@ -165,10 +179,14 @@ is the real backlog of an automation programme. Nobody writes it down. This does
 | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | capture, decode, guarded replay for no-API instruments; incomplete maps stay blocked from actuation |
 | `plr-tested` *(private)* | supervised physical-instrument run cards and observed failures, kept as evidence |
 | [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) | a simulation backend for PyLabRobot's arm API, which upstream ships without |
-| [lab-cv](https://github.com/di-omics/lab-cv) | plate/well detection, state classification, tracking, camera-verified liquid handling |
+| [lab-cv](https://github.com/di-omics/lab-cv) | detection, state classification, tracking, camera-verified liquid handling, and microscopy image analysis; every demo scored blind against a plant |
+| [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine |
+| [benchmarks](https://github.com/di-omics/benchmarks) | the evaluation index: what each capability is scored on, and which numbers are still pending |
+| [opentrons-drivers](https://github.com/di-omics/opentrons-drivers) | serial GCode for the OT-One Smoothieboard, HTTP for OT-2 and Flex, with a simulator |
 | [spatial-flow](https://github.com/di-omics/spatial-flow) | spatial-biology lab operations: specimen lineage and TMA batch-balance planning |
 | [awesome-wetlab-cv](https://github.com/di-omics/awesome-wetlab-cv) | curated CV for labs that see, decide, and act -- with CI that checks every link |
 | [bay-hack](https://github.com/di-omics/bay-hack) | verified tube access: no verified opening, no pipetting -- enforced in code and in the sealed receipt |
+| `bench-world-model` *(in build)* | action-conditioned prediction of a workcell, and the gate that refuses to act when the model cannot predict |
 
 ## What is not built yet
 
