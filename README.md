@@ -22,7 +22,7 @@ computation, and ML.
 <a href="https://github.com/di-omics/drugdev-gym"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-1-dark.svg"><img src="assets/highlight-1-light.svg" width="24%" alt="10 environments: RL for drug development, every reward validated like an assay. drugdev-gym"></picture></a>
 <a href="https://github.com/di-omics/plr-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-2-dark.svg"><img src="assets/highlight-2-light.svg" width="24%" alt="4 instruments as agent-callable MCP tools, simulation by default. plr-mcp"></picture></a>
 <a href="https://github.com/di-omics/plr-reverse-engineer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-3-dark.svg"><img src="assets/highlight-3-light.svg" width="24%" alt="5 playbooks for bringing lab instruments with no API under Python. plr-reverse-engineer"></picture></a>
-<a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 legs of a closed loop, computed: it names the one that breaks. autonomous-lab"></picture></a>
+<a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 stages of a closed loop, computed: it names the one that breaks. autonomous-lab"></picture></a>
 </p>
 
 - **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- new in November 2026. Ten
@@ -41,7 +41,7 @@ computation, and ML.
   each with its status stated: a cell sorter, an LC/MS, a solvent evaporator, a DNA
   sequencer, and a single-cell dispenser.
 - **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab
-  can close a loop from hypothesis to evidence across four legs (execute, measure, decide,
+  can close a loop from hypothesis to evidence across four stages (execute, measure, decide,
   record), and names the one that breaks.
 
 ## Now
@@ -79,7 +79,7 @@ result means, what to run next, when a clean-looking plate should be thrown away
 robot must prove before it is trusted with the step.
 
 So the portfolio is built around making that judgment explicit, attributable, and checkable.
-The full argument, the four legs of a closed loop, and the order the stack has to be built
+The full argument, the four stages of a closed loop, and the order the stack has to be built
 in are in **[THESIS.md](THESIS.md)**.
 
 ## Current evidence boundary
@@ -107,7 +107,7 @@ the evidence should not be shown a claim resting on it.
 
 | | |
 | --- | --- |
-| [autonomous-lab](https://github.com/di-omics/autonomous-lab) | evidence and permission for autonomous labs: computes whether a loop closes, and names which leg breaks |
+| [autonomous-lab](https://github.com/di-omics/autonomous-lab) | evidence and permission for autonomous labs: computes whether a loop closes, and names which stage breaks |
 | [plr-mcp](https://github.com/di-omics/plr-mcp) | typed, agent-callable lab tools; the arming model is enforced in code, not documented |
 | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | capture, decode, guarded replay for no-API instruments; incomplete maps stay blocked from actuation |
 | [benchmarks](https://github.com/di-omics/benchmarks) | the evaluation index: what each capability is scored on, and which numbers are still pending |

@@ -23,7 +23,7 @@ TILES = [
     ("5", "playbooks",
      ["for bringing lab instruments", "with no API under Python"],
      "plr-reverse-engineer"),
-    ("4", "legs",
+    ("4", "stages",
      ["of a closed loop, computed:", "it names the one that breaks"],
      "autonomous-lab"),
 ]
