@@ -1,6 +1,9 @@
 # Di Hu
 
-**full-stack biologist - building autonomous labs**
+**full-stack scientist - building autonomous labs**
+
+Bridging the embodiment gap between scientific expertise and robotic execution, with
+sequential, baked-in, measurable QC.
 
 My work turns protocols, acceptance criteria, and failure responses into gated, auditable
 execution across laboratory hardware. This profile is a public portfolio of reusable
@@ -13,15 +16,40 @@ computation, and ML.
 [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) /
 [Writing](https://reinhaudt.com)
 
-## Start here
+## Highlights
 
+<p>
+<a href="https://github.com/di-omics/drugdev-gym"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-1-dark.svg"><img src="assets/highlight-1-light.svg" width="24%" alt="8 environments: RL for drug development, every reward validated like an assay. drugdev-gym"></picture></a>
+<a href="https://github.com/di-omics/plr-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-2-dark.svg"><img src="assets/highlight-2-light.svg" width="24%" alt="4 instruments as agent-callable MCP tools, simulation by default. plr-mcp"></picture></a>
+<a href="https://github.com/di-omics/plr-reverse-engineer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-3-dark.svg"><img src="assets/highlight-3-light.svg" width="24%" alt="5 playbooks for bringing lab instruments with no API under Python. plr-reverse-engineer"></picture></a>
+<a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 legs of a closed loop, computed: it names the one that breaks. autonomous-lab"></picture></a>
+</p>
+
+- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- new in November 2026. Eight
+  RL environments for cell assays and drug development, each running on a simulated liquid
+  handler. Every reward is validated like an assay before it is scaled: the expert protocol
+  against named bench mistakes, over the same seeds. More than 500 tests. Simulation only.
+- **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a
+  thermocycler, and a heater-shaker as MCP tools that any agent can call. Simulation by
+  default, with hardware permission enforced in code.
+- **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** -- capture,
+  decode, and guarded replay for instruments with no automation API. Five playbooks so far,
+  each with its status stated: a cell sorter, an LC/MS, a solvent evaporator, a DNA
+  sequencer, and a single-cell dispenser.
 - **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab
-  can close a loop from hypothesis to evidence, across all four legs, and names the one that
-  breaks.
-- **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- exposes PyLabRobot devices as
-  agent-callable tools, simulation by default, with execution gates enforced in code.
-- **[plr-lab-robot](https://github.com/di-omics/plr-lab-robot)** -- a simulation backend for
-  PyLabRobot's arm API, which upstream ships without.
+  can close a loop from hypothesis to evidence across four legs (execute, measure, decide,
+  record), and names the one that breaks.
+
+## Now
+
+What I am building in the open right now. The status column says how far along each one is.
+
+| | The question | Status |
+| --- | --- | --- |
+| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Eight environments; nothing has touched hardware, cells, or compounds |
+| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | Is the gain real? A known-truth audit of how robot-policy checkpoints get picked and reported, piloted on Reacher-v5, then on Diffusion Policy / PushT | plan and draft pre-registration committed; nothing run yet beyond environment checks |
+| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | Do liquid neural networks control a robot arm better under sensor noise than matched-size MLPs and LSTMs? | teacher, demonstrations, and student training run; the noise sweep has not been run |
+| [ml-foundations](https://github.com/di-omics/ml-foundations) | The PyTorch training loop from the inside, on FashionMNIST | warm-up, in progress |
 
 ## Capabilities
 
@@ -30,23 +58,12 @@ computation, and ML.
 | **Autonomous lab** | orchestration, QC gates, provenance, recovery, honest hardware boundaries | [autonomous-lab](https://github.com/di-omics/autonomous-lab) |
 | **Robotics** | arm control under PyLabRobot, eye-in-hand vision, instrument reverse engineering | [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) |
 | **Computer vision and image analysis** | detection, state, tracking, camera-verified execution, scored blind | [lab-cv](https://github.com/di-omics/lab-cv) |
+| **RL environments** | simulated assay, potency, and stability environments, with rewards validated like assays | [drugdev-gym](https://github.com/di-omics/drugdev-gym) |
 | **ML for biology** | protein design loops, Bayesian assay optimization, conformal QC | [ml-design-loops](https://github.com/di-omics/ml-design-loops) |
 | **Benchmarks and evals** | the metric each capability is scored on, and which numbers are still pending | [benchmarks](https://github.com/di-omics/benchmarks) |
 
 Each row states its own evidence boundary. Most of this is simulated, and every repository
 says so.
-
-## Now: robot learning and evaluation
-
-Started October 2026: learned robot control policies in simulation, and how far to trust the
-numbers reported about them. This is early work, and the status column says exactly how
-early.
-
-| | The question | Status |
-| --- | --- | --- |
-| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | Is the gain real? A known-truth audit of how robot-policy checkpoints get picked and reported, piloted on Reacher-v5, then on Diffusion Policy / PushT | plan and draft pre-registration committed; nothing run yet beyond environment checks |
-| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | Do liquid neural networks control a robot arm better under sensor noise than matched-size MLPs and LSTMs? | teacher, demonstrations, and student training run; the noise sweep has not been run |
-| [ml-foundations](https://github.com/di-omics/ml-foundations) | The PyTorch training loop from the inside, on FashionMNIST | warm-up, in progress |
 
 ## What it is all for
 
@@ -92,6 +109,16 @@ the evidence should not be shown a claim resting on it.
 | [benchmarks](https://github.com/di-omics/benchmarks) | the evaluation index: what each capability is scored on, and which numbers are still pending |
 | `plr-tested` *(private)* | supervised physical-instrument run cards and observed failures, kept as evidence |
 
+**RL environments and ML**
+
+| | |
+| --- | --- |
+| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward validated like an assay |
+| [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine |
+| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported |
+| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise |
+| [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
+
 **Robotics and vision**
 
 | | |
@@ -111,15 +138,6 @@ the evidence should not be shown a claim resting on it.
 | [omics-demos](https://github.com/di-omics/omics-demos) | synthetic, ground-truth demos for scRNA-seq, methylation sequencing, and PCR enrichment QC; no wet-lab claims |
 | [plr-minimum-effective](https://github.com/di-omics/plr-minimum-effective) | finds the cheapest sequencing library prep that still gives a callable answer: unique reads per dollar, gated on in-process CV |
 | [spatial-flow](https://github.com/di-omics/spatial-flow) | spatial-biology lab operations: specimen lineage and TMA batch-balance planning |
-
-**ML**
-
-| | |
-| --- | --- |
-| [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine |
-| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported |
-| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise |
-| [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
 
 **Hack days**
 
