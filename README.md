@@ -29,6 +29,8 @@ computation, and ML.
   RL environments for cell assays and drug development, each running on a simulated liquid
   handler. Every reward is validated like an assay before it is scaled: the expert protocol
   against named bench mistakes, over the same seeds. More than 800 tests. Simulation only.
+  Sister repo [longevity-gym](https://github.com/di-omics/longevity-gym): did an intervention make simulated people younger, or
+  only move the aging clocks? Nothing in it is trained on real data.
 - **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- new in November 2026. Assay-style
   validation of scBench, LatchBio's public single-cell agent benchmark. An independent grader
   reproduces all 273 published verdicts, then measures how well each pass window separates
@@ -51,6 +53,7 @@ What I am building in the open right now. The status column says how far along e
 | | The question | Status |
 | --- | --- | --- |
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Ten environments; nothing has touched hardware, cells, or compounds |
+| [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? One environment, eight simulated clocks, twelve named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | Is the gain real? A known-truth audit of how robot-policy checkpoints get picked and reported, piloted on Reacher-v5, then on Diffusion Policy / PushT | plan and draft pre-registration committed; nothing run yet beyond environment checks |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | Do liquid neural networks control a robot arm better under sensor noise than matched-size MLPs and LSTMs? | teacher, demonstrations, and student training run; the noise sweep has not been run |
 | [ml-foundations](https://github.com/di-omics/ml-foundations) | The PyTorch training loop from the inside, on FashionMNIST | warm-up, in progress |
@@ -62,7 +65,7 @@ What I am building in the open right now. The status column says how far along e
 | **Autonomous lab** | orchestration, QC gates, provenance, recovery, honest hardware boundaries | [autonomous-lab](https://github.com/di-omics/autonomous-lab) |
 | **Robotics** | arm control under PyLabRobot, eye-in-hand vision, instrument reverse engineering | [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) |
 | **Computer vision and image analysis** | detection, state, tracking, camera-verified execution, scored blind | [lab-cv](https://github.com/di-omics/lab-cv) |
-| **RL environments** | simulated assay, potency, and stability environments, with rewards validated like assays | [drugdev-gym](https://github.com/di-omics/drugdev-gym) |
+| **RL environments** | simulated assay, potency, stability, and aging-clock environments, with rewards validated like assays | [drugdev-gym](https://github.com/di-omics/drugdev-gym), [longevity-gym](https://github.com/di-omics/longevity-gym) |
 | **ML for biology** | protein design loops, Bayesian assay optimization, conformal QC | [ml-design-loops](https://github.com/di-omics/ml-design-loops) |
 | **Benchmarks and evals** | the metric each capability is scored on, and which numbers are still pending | [benchmarks](https://github.com/di-omics/benchmarks) |
 
@@ -118,6 +121,7 @@ the evidence should not be shown a claim resting on it.
 | | |
 | --- | --- |
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward validated like an assay |
+| [longevity-gym](https://github.com/di-omics/longevity-gym) | one RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
 | [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine |
 | [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported |
