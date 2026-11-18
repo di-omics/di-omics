@@ -19,16 +19,16 @@ computation, and ML.
 ## Highlights
 
 <p>
-<a href="https://github.com/di-omics/drugdev-gym"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-1-dark.svg"><img src="assets/highlight-1-light.svg" width="24%" alt="8 environments: RL for drug development, every reward validated like an assay. drugdev-gym"></picture></a>
+<a href="https://github.com/di-omics/drugdev-gym"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-1-dark.svg"><img src="assets/highlight-1-light.svg" width="24%" alt="10 environments: RL for drug development, every reward validated like an assay. drugdev-gym"></picture></a>
 <a href="https://github.com/di-omics/plr-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-2-dark.svg"><img src="assets/highlight-2-light.svg" width="24%" alt="4 instruments as agent-callable MCP tools, simulation by default. plr-mcp"></picture></a>
 <a href="https://github.com/di-omics/plr-reverse-engineer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-3-dark.svg"><img src="assets/highlight-3-light.svg" width="24%" alt="5 playbooks for bringing lab instruments with no API under Python. plr-reverse-engineer"></picture></a>
 <a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 legs of a closed loop, computed: it names the one that breaks. autonomous-lab"></picture></a>
 </p>
 
-- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- new in November 2026. Eight
+- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- new in November 2026. Ten
   RL environments for cell assays and drug development, each running on a simulated liquid
   handler. Every reward is validated like an assay before it is scaled: the expert protocol
-  against named bench mistakes, over the same seeds. More than 500 tests. Simulation only.
+  against named bench mistakes, over the same seeds. More than 800 tests. Simulation only.
 - **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a
   thermocycler, and a heater-shaker as MCP tools that any agent can call. Simulation by
   default, with hardware permission enforced in code.
@@ -46,7 +46,7 @@ What I am building in the open right now. The status column says how far along e
 
 | | The question | Status |
 | --- | --- | --- |
-| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Eight environments; nothing has touched hardware, cells, or compounds |
+| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Ten environments; nothing has touched hardware, cells, or compounds |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | Is the gain real? A known-truth audit of how robot-policy checkpoints get picked and reported, piloted on Reacher-v5, then on Diffusion Policy / PushT | plan and draft pre-registration committed; nothing run yet beyond environment checks |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | Do liquid neural networks control a robot arm better under sensor noise than matched-size MLPs and LSTMs? | teacher, demonstrations, and student training run; the noise sweep has not been run |
 | [ml-foundations](https://github.com/di-omics/ml-foundations) | The PyTorch training loop from the inside, on FashionMNIST | warm-up, in progress |

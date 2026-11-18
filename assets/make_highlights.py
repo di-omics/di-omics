@@ -14,7 +14,7 @@ OUT = pathlib.Path(__file__).resolve().parent
 # number, unit, two short lines, repository. Keep every number checkable
 # in the repository it names.
 TILES = [
-    ("8", "environments",
+    ("10", "environments",
      ["RL for drug development, every", "reward validated like an assay"],
      "drugdev-gym"),
     ("4", "instruments",
