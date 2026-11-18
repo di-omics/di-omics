@@ -29,6 +29,10 @@ computation, and ML.
   RL environments for cell assays and drug development, each running on a simulated liquid
   handler. Every reward is validated like an assay before it is scaled: the expert protocol
   against named bench mistakes, over the same seeds. More than 800 tests. Simulation only.
+- **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- new in November 2026. Assay-style
+  validation of scBench, LatchBio's public single-cell agent benchmark. An independent grader
+  reproduces all 273 published verdicts, then measures how well each pass window separates
+  the intended method from named traps. Six example tasks, public runs only.
 - **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a
   thermocycler, and a heater-shaker as MCP tools that any agent can call. Simulation by
   default, with hardware permission enforced in code.
@@ -115,6 +119,7 @@ the evidence should not be shown a claim resting on it.
 | --- | --- |
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward validated like an assay |
 | [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine |
+| [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise |
 | [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
