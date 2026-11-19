@@ -13,8 +13,7 @@ change to a model.
 Oxford PhD / joint first author in *Nature Communications* / wet lab, single-cell and
 low-input genomics, automation, computation, and ML.
 
-[The argument](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) /
-[Writing](https://reinhaudt.com)
+[The argument](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/)
 
 **November 2026:** 1st place in the past.dev challenge at the Iterate AI Research Hackathon,
 with team Butterfly Effect. A language model proposes changes to a GPU price forecaster, and a
