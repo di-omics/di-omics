@@ -16,6 +16,12 @@ computation, and ML.
 [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) /
 [Writing](https://reinhaudt.com)
 
+**November 2026:** 1st place in the past.dev challenge at the Iterate AI Research Hackathon,
+with team Butterfly Effect. A language model proposes changes to a GPU price forecaster, and a
+critic decides which are kept. I contributed the critic: a sign test over 46 past forecast
+dates, with a bar that gets stricter at every trial.
+[Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
+
 ## Highlights
 
 <p>
