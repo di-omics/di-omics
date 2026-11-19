@@ -109,6 +109,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | evidence and permission for autonomous labs: computes whether a loop closes, and names which stage breaks |
 | [plr-mcp](https://github.com/di-omics/plr-mcp) | typed, agent-callable lab tools; the arming model is enforced in code, not documented |
 | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | capture, decode, guarded replay for no-API instruments; incomplete maps stay blocked from actuation |
+| [agentic-lab-guide](https://github.com/di-omics/agentic-lab-guide) | a step-by-step guide from an instrument to an instrument driven by an agent, with an expert's tunable liquid-handling parameters; tested in simulation only |
 | `plr-tested` *(private)* | supervised physical-instrument run cards and observed failures, kept as evidence |
 
 **Robotics and vision**
