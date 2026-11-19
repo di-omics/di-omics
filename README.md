@@ -76,6 +76,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | 1 scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Can a published paper be turned into evaluation tasks for AI agents, each with controls that test its grader? | 6 tasks from 1 paper I co-first-authored, in LatchBio's public eval format. Independent work, not part of EpiBench. The answer keys have not been reviewed by a person yet |
 | [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Batch 1, 18 Nov: Dream-1 zero-shot passes 7 of 45 takes over the first 15 two-arm tasks, 0 of 18 on the 6 plate tasks, and 2 of the 7 are flagged in the repo. No real-robot results |
+| [robot-lab-judge](https://github.com/di-omics/robot-lab-judge) | From camera pictures alone, can a vision model tell whether a robot's lab chore passed? | simulation only. 3 small open-weight models, zero-shot, on 475 dev scenes of 10 chores: the best scores 0.65 balanced accuracy and is at a coin flip on every plate chore. The sealed test split is unscored, and no person has reviewed the numbers yet |
 
 </details>
 
@@ -90,6 +91,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for 1 scBench task, run on the public copy of its data and graded with the task's own window |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | 6 epigenomics eval tasks for AI agents, built from 1 published paper, each with the scripted controls its grader was tested against; independent work, not part of LatchBio's EpiBench |
 | [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | zero-shot robot models on everyday lab handling, 2 YAM arms in simulation, scored from the simulator state; 15 tasks so far |
+| [robot-lab-judge](https://github.com/di-omics/robot-lab-judge) | vision judges on the robot-lab-handling chores: from camera pictures alone, did the chore pass; small open-weight models zero-shot so far, with a sealed test split |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported; plan stage, nothing run yet |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise; the noise sweep has not been run |
 | [benchmarks](https://github.com/di-omics/benchmarks) | how the July 2026 lab-automation and omics repositories are evaluated, and which numbers are still pending |
