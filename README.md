@@ -32,18 +32,18 @@ kept. [Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
   [longevity-gym](https://github.com/di-omics/longevity-gym) asks the same of aging clocks.
 - **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- an independent grader reproduces all 273 published verdicts
   of scBench, LatchBio's public single-cell agent benchmark, then measures how well each pass
-  window separates the intended method from named traps. Six example tasks, public runs only.
+  window separates the intended method from named traps. 6 example tasks, public runs only.
   Siblings: [sc-controls](https://github.com/di-omics/sc-controls) and [epigenomics-evals](https://github.com/di-omics/epigenomics-evals).
 - **[robot-lab-handling](https://github.com/di-omics/robot-lab-handling)** -- robot models told in plain words to do
-  everyday lab chores, with two arms in simulation and the simulator as the only judge. 15
+  everyday lab chores, with 2 arms in simulation and the simulator as the only judge. 15
   tasks so far. In the first batch, Dream-1 with no training passes 7 of 45 takes.
 - **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a thermocycler, and a
   heater-shaker as MCP tools any agent can call. Simulation by default, hardware permission
   enforced in code.
 - **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** -- capture, decode, and guarded replay
-  for instruments with no automation API. Five playbooks so far, each with its status stated.
+  for instruments with no automation API. 5 playbooks so far, each with its status stated.
 - **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab can close a loop from
-  hypothesis to evidence across four stages, and names the one that breaks.
+  hypothesis to evidence across 4 stages, and names the one that breaks.
 
 Most of this is simulated, and each repository says so. There is no customer deployment and
 no full wet end-to-end biological endpoint yet.
@@ -51,7 +51,7 @@ no full wet end-to-end biological endpoint yet.
 <details>
 <summary><b>Evidence boundary</b></summary>
 
-Some named operations have run on physical instruments under supervision. Three terms are
+Some named operations have run on physical instruments under supervision. 3 terms are
 used narrowly:
 
 - **Simulated** -- exercised without attached instruments.
@@ -70,10 +70,10 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 
 | | The question | Status |
 | --- | --- | --- |
-| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Ten environments; nothing has touched hardware, cells, or compounds |
-| [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? One environment, eight simulated clocks, twelve named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
-| [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | one scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
-| [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Can a published paper be turned into evaluation tasks for AI agents, each with controls that test its grader? | 6 tasks from one paper I co-first-authored, in LatchBio's public eval format. Independent work, not part of EpiBench. The answer keys have not been reviewed by a person yet |
+| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. 10 environments; nothing has touched hardware, cells, or compounds |
+| [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? 1 environment, 8 simulated clocks, 12 named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
+| [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | 1 scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
+| [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Can a published paper be turned into evaluation tasks for AI agents, each with controls that test its grader? | 6 tasks from 1 paper I co-first-authored, in LatchBio's public eval format. Independent work, not part of EpiBench. The answer keys have not been reviewed by a person yet |
 | [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Batch 1, 18 Nov: Dream-1 zero-shot passes 7 of 45 takes over the first 15 two-arm tasks, 0 of 18 on the 6 plate tasks, and 2 of the 7 are flagged in the repo. No real-robot results |
 
 </details>
@@ -86,9 +86,9 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | | |
 | --- | --- |
 | [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
-| [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for one scBench task, run on the public copy of its data and graded with the task's own window |
-| [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | 6 epigenomics eval tasks for AI agents, built from one published paper, each with the scripted controls its grader was tested against; independent work, not part of LatchBio's EpiBench |
-| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | zero-shot robot models on everyday lab handling, two YAM arms in simulation, scored from the simulator state; 15 tasks so far |
+| [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for 1 scBench task, run on the public copy of its data and graded with the task's own window |
+| [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | 6 epigenomics eval tasks for AI agents, built from 1 published paper, each with the scripted controls its grader was tested against; independent work, not part of LatchBio's EpiBench |
+| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | zero-shot robot models on everyday lab handling, 2 YAM arms in simulation, scored from the simulator state; 15 tasks so far |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported; plan stage, nothing run yet |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise; the noise sweep has not been run |
 | [benchmarks](https://github.com/di-omics/benchmarks) | how the July 2026 lab-automation and omics repositories are evaluated, and which numbers are still pending |
@@ -98,7 +98,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | | |
 | --- | --- |
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward checked like an assay |
-| [longevity-gym](https://github.com/di-omics/longevity-gym) | one RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
+| [longevity-gym](https://github.com/di-omics/longevity-gym) | 1 RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
 | [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine; simulation only |
 | [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
 
