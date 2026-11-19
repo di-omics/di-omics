@@ -60,13 +60,13 @@ downgraded when that path does not exist, and benchmarks a robot must meet befor
 trusted with a task. An operation nobody has benchmarked is untrusted by default, which is
 the opposite of the usual convention and the correct one.
 
-## Four legs, not one number
+## Four stages, not one number
 
-Executing a protocol is the leg everyone measures. A lab that executes perfectly and cannot
+Executing a protocol is the stage everyone measures. A lab that executes perfectly and cannot
 tell a good plate from a bad one is not running an experiment, it is moving liquid. Closing
 a single loop takes four things, and they fail independently:
 
-| Leg | The question | What failure means |
+| Stage | The question | What failure means |
 | --- | --- | --- |
 | **Execute** | can the machine perform the step? | reverse-engineering work |
 | **Measure** | does a result arrive, from the right assay? | an instrument that returns a usable number |
