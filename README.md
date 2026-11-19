@@ -41,6 +41,11 @@ dates, with a bar that gets stricter at every trial.
   then measures how well each pass window separates the intended method from named traps.
   Six example tasks, public runs only. Sibling [sc-controls](https://github.com/di-omics/sc-controls) runs scripted
   positive and negative controls for one of those tasks on the public copy of its data.
+- **[lab-handling-bench](https://github.com/di-omics/lab-handling-bench)** -- how far does a general robot model get on
+  the handling chores around a liquid handler, when a scientist just tells it what to do? 15
+  two-arm tasks in simulation, scored from the simulator with no human judging, under a
+  protocol written before the first scored take. Dream-1 runs zero-shot; most takes do not
+  pass yet.
 - **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a thermocycler, and a
   heater-shaker as MCP tools that any agent can call. Simulation by default, with hardware
   permission enforced in code.
@@ -73,6 +78,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Ten environments; nothing has touched hardware, cells, or compounds |
 | [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? One environment, eight simulated clocks, twelve named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
 | [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | one scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
+| [lab-handling-bench](https://github.com/di-omics/lab-handling-bench) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Dream-1 run zero-shot on 15 two-arm tasks, plus a small camera-guided pilot on one task; most takes do not pass yet. No real-robot results |
 
 <details>
 <summary><b>All repositories, by theme</b></summary>
@@ -83,6 +89,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | --- | --- |
 | [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
 | [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for one scBench task, run on the public copy of its data and graded with the task's own window |
+| [lab-handling-bench](https://github.com/di-omics/lab-handling-bench) | zero-shot robot models on 15 everyday lab handling tasks, two YAM arms in simulation, scored from the simulator state |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported; plan stage, nothing run yet |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise; the noise sweep has not been run |
 | [benchmarks](https://github.com/di-omics/benchmarks) | how the July 2026 lab-automation and omics repositories are evaluated, and which numbers are still pending |
