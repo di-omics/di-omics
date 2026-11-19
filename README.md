@@ -78,6 +78,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Ten environments; nothing has touched hardware, cells, or compounds |
 | [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? One environment, eight simulated clocks, twelve named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
 | [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | one scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
+| [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Can a published paper be turned into evaluation tasks for AI agents, each with controls that test its grader? | 6 tasks from one paper I co-first-authored, in LatchBio's public eval format. Independent work, not part of EpiBench. The answer keys have not been reviewed by a person yet |
 | [lab-handling-bench](https://github.com/di-omics/lab-handling-bench) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Dream-1 run zero-shot on 15 two-arm tasks, plus a small camera-guided pilot on one task; most takes do not pass yet. No real-robot results |
 
 <details>
@@ -89,6 +90,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | --- | --- |
 | [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
 | [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for one scBench task, run on the public copy of its data and graded with the task's own window |
+| [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | 6 epigenomics eval tasks for AI agents, built from one published paper, each with the scripted controls its grader was tested against; independent work, not part of LatchBio's EpiBench |
 | [lab-handling-bench](https://github.com/di-omics/lab-handling-bench) | zero-shot robot models on 15 everyday lab handling tasks, two YAM arms in simulation, scored from the simulator state |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported; plan stage, nothing run yet |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise; the noise sweep has not been run |
