@@ -5,10 +5,8 @@
 Bridging the embodiment gap between scientific expertise and robotic execution, with
 sequential, baked-in, measurable QC.
 
-My work turns protocols, acceptance criteria, and failure responses into gated, auditable
-execution across laboratory hardware. The piece that recurs across this profile is the test
-that decides whether a result is real: for an assay, an agent benchmark, an RL reward, or a
-change to a model.
+I build the test that decides whether a result is real: for an assay, an agent benchmark, an
+RL reward, a robot model, or a change to a model.
 
 Oxford PhD / joint first author in *Nature Communications* / wet lab, single-cell and
 low-input genomics, automation, computation, and ML.
@@ -16,10 +14,9 @@ low-input genomics, automation, computation, and ML.
 [The argument](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/)
 
 **November 2026:** 1st place in the past.dev challenge at the Iterate AI Research Hackathon,
-with team Butterfly Effect. A language model proposes changes to a GPU price forecaster, and a
-critic decides which are kept. I contributed the critic: a sign test over 46 past forecast
-dates, with a bar that gets stricter at every trial.
-[Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
+with team Butterfly Effect. I contributed the critic: a sign test over 46 past forecast dates,
+with a bar that gets stricter at every trial, that decides which changes to a forecaster are
+kept. [Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
 
 ## Highlights
 
@@ -30,37 +27,32 @@ dates, with a bar that gets stricter at every trial.
 <a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 stages of a closed loop, computed: it names the one that breaks. autonomous-lab"></picture></a>
 </p>
 
-- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- ten RL environments for cell assays and drug
-  development, each on a simulated liquid handler. Every reward is checked like an assay
-  before it is scaled: the expert protocol against named bench mistakes, over the same seeds,
-  with a table of what the reward cannot see. Simulation only. Sister repo
-  [longevity-gym](https://github.com/di-omics/longevity-gym) asks the same of aging clocks: did an intervention make
-  simulated people younger, or only move the clocks? Nothing in it is trained on real data.
-- **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- assay-style validation of scBench, LatchBio's public
-  single-cell agent benchmark. An independent grader reproduces all 273 published verdicts,
-  then measures how well each pass window separates the intended method from named traps.
-  Six example tasks, public runs only. Sibling [sc-controls](https://github.com/di-omics/sc-controls) runs scripted
-  positive and negative controls for one of those tasks on the public copy of its data.
-- **[robot-lab-handling](https://github.com/di-omics/robot-lab-handling)** -- how far does a general robot model get on
-  the handling chores around a liquid handler, when a scientist just tells it what to do? 15
-  two-arm tasks in simulation, scored from the simulator with no human judging, under a
-  protocol written before the first scored take. In the first batch Dream-1, run zero-shot,
-  passes 7 of 45 takes and none of the 18 on plate tasks.
+- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- 10 simulated RL environments for cell assays and drug
+  development. Every reward is checked like an assay before it is scaled. Sister repo
+  [longevity-gym](https://github.com/di-omics/longevity-gym) asks the same of aging clocks.
+- **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- an independent grader reproduces all 273 published verdicts
+  of scBench, LatchBio's public single-cell agent benchmark, then measures how well each pass
+  window separates the intended method from named traps. Six example tasks, public runs only.
+  Siblings: [sc-controls](https://github.com/di-omics/sc-controls) and [epigenomics-evals](https://github.com/di-omics/epigenomics-evals).
+- **[robot-lab-handling](https://github.com/di-omics/robot-lab-handling)** -- robot models told in plain words to do
+  everyday lab chores, with two arms in simulation and the simulator as the only judge. 15
+  tasks so far. In the first batch, Dream-1 with no training passes 7 of 45 takes.
 - **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a thermocycler, and a
-  heater-shaker as MCP tools that any agent can call. Simulation by default, with hardware
-  permission enforced in code.
+  heater-shaker as MCP tools any agent can call. Simulation by default, hardware permission
+  enforced in code.
 - **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** -- capture, decode, and guarded replay
-  for instruments with no automation API. Five playbooks so far, each with its status stated:
-  a cell sorter, an LC/MS, a solvent evaporator, a DNA sequencer, and a single-cell dispenser.
+  for instruments with no automation API. Five playbooks so far, each with its status stated.
 - **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab can close a loop from
-  hypothesis to evidence across four stages (execute, measure, decide, record), and names the
-  one that breaks.
+  hypothesis to evidence across four stages, and names the one that breaks.
 
-## Evidence boundary
+Most of this is simulated, and each repository says so. There is no customer deployment and
+no full wet end-to-end biological endpoint yet.
 
-Most of this portfolio is simulated, and each repository says so. Some named operations have
-run on physical instruments under supervision. There is no customer deployment and no full
-wet end-to-end biological endpoint yet. Three terms are used narrowly:
+<details>
+<summary><b>Evidence boundary</b></summary>
+
+Some named operations have run on physical instruments under supervision. Three terms are
+used narrowly:
 
 - **Simulated** -- exercised without attached instruments.
 - **Hardware-executed under supervision** -- a named interaction ran on a physical
@@ -71,7 +63,10 @@ A simulator result never becomes a hardware or biological claim by wording alone
 supervised run cards and observed failures are kept in `plr-tested` *(private)*, because a
 reader who cannot inspect the evidence should not be shown a claim resting on it.
 
-## Now
+</details>
+
+<details>
+<summary><b>Now: what is in progress, and how far along</b></summary>
 
 | | The question | Status |
 | --- | --- | --- |
@@ -79,7 +74,9 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? One environment, eight simulated clocks, twelve named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
 | [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | one scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Can a published paper be turned into evaluation tasks for AI agents, each with controls that test its grader? | 6 tasks from one paper I co-first-authored, in LatchBio's public eval format. Independent work, not part of EpiBench. The answer keys have not been reviewed by a person yet |
-| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Batch 1, 18 Nov: Dream-1 zero-shot passes 7 of 45 takes over 15 two-arm tasks, 0 of 18 on the 6 plate tasks, and 2 of the 7 are flagged in the repo. No real-robot results |
+| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Batch 1, 18 Nov: Dream-1 zero-shot passes 7 of 45 takes over the first 15 two-arm tasks, 0 of 18 on the 6 plate tasks, and 2 of the 7 are flagged in the repo. No real-robot results |
+
+</details>
 
 <details>
 <summary><b>All repositories, by theme</b></summary>
@@ -91,7 +88,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
 | [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for one scBench task, run on the public copy of its data and graded with the task's own window |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | 6 epigenomics eval tasks for AI agents, built from one published paper, each with the scripted controls its grader was tested against; independent work, not part of LatchBio's EpiBench |
-| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | zero-shot robot models on 15 everyday lab handling tasks, two YAM arms in simulation, scored from the simulator state |
+| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | zero-shot robot models on everyday lab handling, two YAM arms in simulation, scored from the simulator state; 15 tasks so far |
 | [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported; plan stage, nothing run yet |
 | [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise; the noise sweep has not been run |
 | [benchmarks](https://github.com/di-omics/benchmarks) | how the July 2026 lab-automation and omics repositories are evaluated, and which numbers are still pending |
