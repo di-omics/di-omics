@@ -2,21 +2,22 @@
 
 **full-stack scientist - building autonomous labs**
 
-Bridging the embodiment gap between scientific expertise and robotic execution, with
-sequential, baked-in, measurable QC.
-
 I build the test that decides whether a result is real: for an assay, an agent benchmark, an
 RL reward, a robot model, or a change to a model.
+
+**November 2026:** 1st place in the past.dev challenge at the Iterate AI Research Hackathon,
+with team Butterfly Effect: GPU rental price forecasts from a research loop that criticizes
+itself. I contributed the critic: a sign test over 46 past forecast dates, with a bar that
+gets stricter at every trial, that decides which changes to the forecaster are kept. It is
+the same idea as everything below. [Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
+
+Bridging the embodiment gap between scientific expertise and robotic execution, with
+sequential, baked-in, measurable QC.
 
 Oxford PhD / joint first author in *Nature Communications* / wet lab, single-cell and
 low-input genomics, automation, computation, and ML.
 
 [The argument](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/)
-
-**November 2026:** 1st place in the past.dev challenge at the Iterate AI Research Hackathon,
-with team Butterfly Effect. I contributed the critic: a sign test over 46 past forecast dates,
-with a bar that gets stricter at every trial, that decides which changes to a forecaster are
-kept. [Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
 
 ## Highlights
 
@@ -24,7 +25,7 @@ kept. [Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
 <a href="https://github.com/di-omics/drugdev-gym"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-1-dark.svg"><img src="assets/highlight-1-light.svg" width="24%" alt="10 environments: RL for drug development, each reward checked like an assay. drugdev-gym"></picture></a>
 <a href="https://github.com/di-omics/sc-zprime"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-2-dark.svg"><img src="assets/highlight-2-light.svg" width="24%" alt="273 of 273 verdicts reproduced by an independent grader of a public benchmark. sc-zprime"></picture></a>
 <a href="https://github.com/di-omics/plr-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-3-dark.svg"><img src="assets/highlight-3-light.svg" width="24%" alt="4 instruments as agent-callable MCP tools, simulation by default. plr-mcp"></picture></a>
-<a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 stages of a closed loop, computed: it names the one that breaks. autonomous-lab"></picture></a>
+<a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 stages of a closed loop, computed: it names which ones break. autonomous-lab"></picture></a>
 </p>
 
 - **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- 10 simulated RL environments for cell assays and drug
@@ -43,7 +44,7 @@ kept. [Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
 - **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** -- capture, decode, and guarded replay
   for instruments with no automation API. 5 playbooks so far, each with its status stated.
 - **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab can close a loop from
-  hypothesis to evidence across 4 stages, and names the one that breaks.
+  hypothesis to evidence across 4 stages, and names which ones break.
 
 Most of this is simulated, and each repository says so. There is no customer deployment and
 no full wet end-to-end biological endpoint yet.
@@ -79,7 +80,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 </details>
 
 <details>
-<summary><b>All repositories, by theme</b></summary>
+<summary><b>Repositories, by theme</b></summary>
 
 **Evals**
 

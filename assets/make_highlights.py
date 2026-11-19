@@ -24,7 +24,7 @@ TILES = [
      ["as agent-callable MCP tools,", "simulation by default"],
      "plr-mcp"),
     ("4", "stages",
-     ["of a closed loop, computed:", "it names the one that breaks"],
+     ["of a closed loop, computed:", "it names which ones break"],
      "autonomous-lab"),
 ]
 
