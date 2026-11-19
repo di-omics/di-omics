@@ -1,6 +1,6 @@
 # Di Hu
 
-**full-stack scientist - building autonomous labs**
+**full-stack scientist - building autonomous labs with agentic science and physical AI**
 
 I build the test that decides whether a result is real: for an assay, an agent benchmark, an
 RL reward, a robot model, or a change to a model.
