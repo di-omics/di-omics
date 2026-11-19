@@ -30,7 +30,7 @@ low-input genomics, automation, computation, and ML.
 
 - **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- 10 simulated RL environments for cell assays and drug
   development. Every reward is checked like an assay before it is scaled. Sister repo
-  [longevity-gym](https://github.com/di-omics/longevity-gym) asks the same of aging clocks.
+  [longevity-rl](https://github.com/di-omics/longevity-rl) asks the same of aging clocks.
 - **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- an independent grader reproduces all 273 published verdicts
   of scBench, LatchBio's public single-cell agent benchmark, then measures how well each pass
   window separates the intended method from named traps. 6 example tasks, public runs only.
@@ -72,7 +72,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | | The question | Status |
 | --- | --- | --- |
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. 10 environments; nothing has touched hardware, cells, or compounds |
-| [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? 1 environment, 8 simulated clocks, 12 named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
+| [longevity-rl](https://github.com/di-omics/longevity-rl) | Did an intervention make simulated people biologically younger, or only move the clocks? 1 environment, 8 simulated clocks, 12 named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
 | [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | 1 scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Can a published paper be turned into evaluation tasks for AI agents, each with controls that test its grader? | 6 tasks from 1 paper I co-first-authored, in LatchBio's public eval format. Independent work, not part of EpiBench. The answer keys have not been reviewed by a person yet |
 | [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Batch 1, 18 Nov: Dream-1 zero-shot passes 7 of 45 takes over the first 15 two-arm tasks, 0 of 18 on the 6 plate tasks, and 2 of the 7 are flagged in the repo. No real-robot results |
@@ -99,7 +99,7 @@ reader who cannot inspect the evidence should not be shown a claim resting on it
 | | |
 | --- | --- |
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward checked like an assay |
-| [longevity-gym](https://github.com/di-omics/longevity-gym) | 1 RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
+| [longevity-rl](https://github.com/di-omics/longevity-rl) | 1 RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
 | [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine; simulation only |
 | [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
 
