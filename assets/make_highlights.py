@@ -15,14 +15,14 @@ OUT = pathlib.Path(__file__).resolve().parent
 # in the repository it names.
 TILES = [
     ("10", "environments",
-     ["RL for drug development, every", "reward validated like an assay"],
+     ["RL for drug development, each", "reward checked like an assay"],
      "drugdev-gym"),
+    ("273", "of 273 verdicts",
+     ["reproduced by an independent", "grader of a public benchmark"],
+     "sc-zprime"),
     ("4", "instruments",
      ["as agent-callable MCP tools,", "simulation by default"],
      "plr-mcp"),
-    ("5", "playbooks",
-     ["for bringing lab instruments", "with no API under Python"],
-     "plr-reverse-engineer"),
     ("4", "stages",
      ["of a closed loop, computed:", "it names the one that breaks"],
      "autonomous-lab"),

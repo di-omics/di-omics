@@ -6,14 +6,14 @@ Bridging the embodiment gap between scientific expertise and robotic execution, 
 sequential, baked-in, measurable QC.
 
 My work turns protocols, acceptance criteria, and failure responses into gated, auditable
-execution across laboratory hardware. This profile is a public portfolio of reusable
-automation, omics, robotics, and evaluation systems.
+execution across laboratory hardware. The piece that recurs across this profile is the test
+that decides whether a result is real: for an assay, an agent benchmark, an RL reward, or a
+change to a model.
 
-Oxford PhD / joint first author in *Nature Communications* / wet lab, genomics, automation,
-computation, and ML.
+Oxford PhD / joint first author in *Nature Communications* / wet lab, single-cell and
+low-input genomics, automation, computation, and ML.
 
-[The argument](THESIS.md) / [Benchmarks](https://di-omics.github.io/benchmarks/) /
-[LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) /
+[The argument](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) /
 [Writing](https://reinhaudt.com)
 
 **November 2026:** 1st place in the past.dev challenge at the Iterate AI Research Hackathon,
@@ -25,92 +25,77 @@ dates, with a bar that gets stricter at every trial.
 ## Highlights
 
 <p>
-<a href="https://github.com/di-omics/drugdev-gym"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-1-dark.svg"><img src="assets/highlight-1-light.svg" width="24%" alt="10 environments: RL for drug development, every reward validated like an assay. drugdev-gym"></picture></a>
-<a href="https://github.com/di-omics/plr-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-2-dark.svg"><img src="assets/highlight-2-light.svg" width="24%" alt="4 instruments as agent-callable MCP tools, simulation by default. plr-mcp"></picture></a>
-<a href="https://github.com/di-omics/plr-reverse-engineer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-3-dark.svg"><img src="assets/highlight-3-light.svg" width="24%" alt="5 playbooks for bringing lab instruments with no API under Python. plr-reverse-engineer"></picture></a>
+<a href="https://github.com/di-omics/drugdev-gym"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-1-dark.svg"><img src="assets/highlight-1-light.svg" width="24%" alt="10 environments: RL for drug development, each reward checked like an assay. drugdev-gym"></picture></a>
+<a href="https://github.com/di-omics/sc-zprime"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-2-dark.svg"><img src="assets/highlight-2-light.svg" width="24%" alt="273 of 273 verdicts reproduced by an independent grader of a public benchmark. sc-zprime"></picture></a>
+<a href="https://github.com/di-omics/plr-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-3-dark.svg"><img src="assets/highlight-3-light.svg" width="24%" alt="4 instruments as agent-callable MCP tools, simulation by default. plr-mcp"></picture></a>
 <a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 stages of a closed loop, computed: it names the one that breaks. autonomous-lab"></picture></a>
 </p>
 
-- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- new in November 2026. Ten
-  RL environments for cell assays and drug development, each running on a simulated liquid
-  handler. Every reward is validated like an assay before it is scaled: the expert protocol
-  against named bench mistakes, over the same seeds. More than 800 tests. Simulation only.
-  Sister repo [longevity-gym](https://github.com/di-omics/longevity-gym): did an intervention make simulated people younger, or
-  only move the aging clocks? Nothing in it is trained on real data.
-- **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- new in November 2026. Assay-style
-  validation of scBench, LatchBio's public single-cell agent benchmark. An independent grader
-  reproduces all 273 published verdicts, then measures how well each pass window separates
-  the intended method from named traps. Six example tasks, public runs only.
-- **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a
-  thermocycler, and a heater-shaker as MCP tools that any agent can call. Simulation by
-  default, with hardware permission enforced in code.
-- **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** -- capture,
-  decode, and guarded replay for instruments with no automation API. Five playbooks so far,
-  each with its status stated: a cell sorter, an LC/MS, a solvent evaporator, a DNA
-  sequencer, and a single-cell dispenser.
-- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab
-  can close a loop from hypothesis to evidence across four stages (execute, measure, decide,
-  record), and names the one that breaks.
+- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- ten RL environments for cell assays and drug
+  development, each on a simulated liquid handler. Every reward is checked like an assay
+  before it is scaled: the expert protocol against named bench mistakes, over the same seeds,
+  with a table of what the reward cannot see. Simulation only. Sister repo
+  [longevity-gym](https://github.com/di-omics/longevity-gym) asks the same of aging clocks: did an intervention make
+  simulated people younger, or only move the clocks? Nothing in it is trained on real data.
+- **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- assay-style validation of scBench, LatchBio's public
+  single-cell agent benchmark. An independent grader reproduces all 273 published verdicts,
+  then measures how well each pass window separates the intended method from named traps.
+  Six example tasks, public runs only. Sibling [sc-controls](https://github.com/di-omics/sc-controls) runs scripted
+  positive and negative controls for one of those tasks on the public copy of its data.
+- **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a thermocycler, and a
+  heater-shaker as MCP tools that any agent can call. Simulation by default, with hardware
+  permission enforced in code.
+- **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** -- capture, decode, and guarded replay
+  for instruments with no automation API. Five playbooks so far, each with its status stated:
+  a cell sorter, an LC/MS, a solvent evaporator, a DNA sequencer, and a single-cell dispenser.
+- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab can close a loop from
+  hypothesis to evidence across four stages (execute, measure, decide, record), and names the
+  one that breaks.
 
-## Now
+## Evidence boundary
 
-What I am building in the open right now. The status column says how far along each one is.
-
-| | The question | Status |
-| --- | --- | --- |
-| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Ten environments; nothing has touched hardware, cells, or compounds |
-| [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? One environment, eight simulated clocks, twelve named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
-| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | Is the gain real? A known-truth audit of how robot-policy checkpoints get picked and reported, piloted on Reacher-v5, then on Diffusion Policy / PushT | plan and draft pre-registration committed; nothing run yet beyond environment checks |
-| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | Do liquid neural networks control a robot arm better under sensor noise than matched-size MLPs and LSTMs? | teacher, demonstrations, and student training run; the noise sweep has not been run |
-| [ml-foundations](https://github.com/di-omics/ml-foundations) | The PyTorch training loop from the inside, on FashionMNIST | warm-up, in progress |
-
-## Capabilities
-
-| | | |
-| --- | --- | --- |
-| **Autonomous lab** | orchestration, QC gates, provenance, recovery, honest hardware boundaries | [autonomous-lab](https://github.com/di-omics/autonomous-lab) |
-| **Robotics** | arm control under PyLabRobot, eye-in-hand vision, instrument reverse engineering | [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) |
-| **Computer vision and image analysis** | detection, state, tracking, camera-verified execution, scored blind | [lab-cv](https://github.com/di-omics/lab-cv) |
-| **RL environments** | simulated assay, potency, stability, and aging-clock environments, with rewards validated like assays | [drugdev-gym](https://github.com/di-omics/drugdev-gym), [longevity-gym](https://github.com/di-omics/longevity-gym) |
-| **ML for biology** | protein design loops, Bayesian assay optimization, conformal QC | [ml-design-loops](https://github.com/di-omics/ml-design-loops) |
-| **Benchmarks and evals** | the metric each capability is scored on, and which numbers are still pending | [benchmarks](https://github.com/di-omics/benchmarks) |
-
-Each row states its own evidence boundary. Most of this is simulated, and every repository
-says so.
-
-## What it is all for
-
-Every layer here exists to serve one number: **how much a lab learns per dollar per
-experimental cycle.** Orchestration is buildable: scheduling instruments, moving plates,
-tracking samples, and holding provenance are engineering with known shapes, and the code
-here does them. What is genuinely scarce is **laboratory intelligence**: knowing what a
-result means, what to run next, when a clean-looking plate should be thrown away, and what a
-robot must prove before it is trusted with the step.
-
-So the portfolio is built around making that judgment explicit, attributable, and checkable.
-The full argument, the four stages of a closed loop, and the order the stack has to be built
-in are in **[THESIS.md](THESIS.md)**.
-
-## Current evidence boundary
-
-Some named operations have been executed on physical instruments under human supervision.
-Most of the portfolio remains simulated. There is no customer deployment and no full wet
-end-to-end biological endpoint yet. Each repository states its own evidence and validation
-boundary, and the language is deliberately narrow:
+Most of this portfolio is simulated, and each repository says so. Some named operations have
+run on physical instruments under supervision. There is no customer deployment and no full
+wet end-to-end biological endpoint yet. Three terms are used narrowly:
 
 - **Simulated** -- exercised without attached instruments.
 - **Hardware-executed under supervision** -- a named interaction ran on a physical
   instrument and its observed result is recorded.
 - **Wet/bio-validated** -- measured biological data met a stated acceptance criterion.
 
-Unknowns stay unknown until evidence clears the next gate. A simulator result never becomes
-a hardware or biological claim by wording alone.
+A simulator result never becomes a hardware or biological claim by wording alone. The
+supervised run cards and observed failures are kept in `plr-tested` *(private)*, because a
+reader who cannot inspect the evidence should not be shown a claim resting on it.
 
-The supervised physical-instrument run cards and observed failures live in `plr-tested`
-*(private)*. It is private because the work is high stakes, and a reader who cannot inspect
-the evidence should not be shown a claim resting on it.
+## Now
 
-## Repositories
+| | The question | Status |
+| --- | --- | --- |
+| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. Ten environments; nothing has touched hardware, cells, or compounds |
+| [longevity-gym](https://github.com/di-omics/longevity-gym) | Did an intervention make simulated people biologically younger, or only move the clocks? One environment, eight simulated clocks, twelve named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
+| [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | one scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
+
+<details>
+<summary><b>All repositories, by theme</b></summary>
+
+**Evals**
+
+| | |
+| --- | --- |
+| [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
+| [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for one scBench task, run on the public copy of its data and graded with the task's own window |
+| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported; plan stage, nothing run yet |
+| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise; the noise sweep has not been run |
+| [benchmarks](https://github.com/di-omics/benchmarks) | how the July 2026 lab-automation and omics repositories are evaluated, and which numbers are still pending |
+
+**RL environments and ML**
+
+| | |
+| --- | --- |
+| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward checked like an assay |
+| [longevity-gym](https://github.com/di-omics/longevity-gym) | one RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
+| [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine; simulation only |
+| [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
 
 **Autonomous lab**
 
@@ -119,20 +104,7 @@ the evidence should not be shown a claim resting on it.
 | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | evidence and permission for autonomous labs: computes whether a loop closes, and names which stage breaks |
 | [plr-mcp](https://github.com/di-omics/plr-mcp) | typed, agent-callable lab tools; the arming model is enforced in code, not documented |
 | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | capture, decode, guarded replay for no-API instruments; incomplete maps stay blocked from actuation |
-| [benchmarks](https://github.com/di-omics/benchmarks) | the evaluation index: what each capability is scored on, and which numbers are still pending |
 | `plr-tested` *(private)* | supervised physical-instrument run cards and observed failures, kept as evidence |
-
-**RL environments and ML**
-
-| | |
-| --- | --- |
-| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward validated like an assay |
-| [longevity-gym](https://github.com/di-omics/longevity-gym) | one RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
-| [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine |
-| [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
-| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported |
-| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise |
-| [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
 
 **Robotics and vision**
 
@@ -154,16 +126,12 @@ the evidence should not be shown a claim resting on it.
 | [plr-minimum-effective](https://github.com/di-omics/plr-minimum-effective) | finds the cheapest sequencing library prep that still gives a callable answer: unique reads per dollar, gated on in-process CV |
 | [spatial-flow](https://github.com/di-omics/spatial-flow) | spatial-biology lab operations: specimen lineage and TMA batch-balance planning |
 
-**Hack days**
+**Hackathons**
 
 | | |
 | --- | --- |
+| Butterfly Effect *(team repo, private)* | 1st place in the past.dev challenge, Iterate AI Research Hackathon, November 2026: I contributed the critic of the research loop |
 | [bay-hack](https://github.com/di-omics/bay-hack) | verified tube access: no verified opening, no pipetting -- enforced in code and in the sealed receipt |
 | [someplace](https://github.com/di-omics/someplace) | a voice companion inside a generated world |
 
-## About
-
-Python / PyLabRobot / MCP and agent harnesses / robotic manipulation and computer vision -
-single-cell and low-input NGS.
-
-[LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/) / [Writing / thesis](https://reinhaudt.com)
+</details>
