@@ -1,23 +1,14 @@
 # Di Hu
 
-**full-stack scientist - building autonomous labs with agentic science and physical AI**
+**Full-stack scientist building autonomous labs with agentic science and physical AI.**
 
-I build the test that decides whether a result is real: for an assay, an agent benchmark, an
-RL reward, a robot model, or a change to a model.
+I build the test that tells us whether to trust a result. Did the robot actually load the plate? Did the agent choose the right analysis? Did an intervention help, or did it just move the aging clock?
 
-**November 2026:** 1st place in the past.dev challenge at the Iterate AI Research Hackathon,
-with team Butterfly Effect: GPU rental price forecasts from a research loop that criticizes
-itself. I contributed the critic: a sign test over 46 past forecast dates, with a bar that
-gets stricter at every trial, that decides which changes to the forecaster are kept. It is
-the same idea as everything below. [Demo video](https://www.youtube.com/watch?v=oh6KsCcu3P0).
+[Projects by theme](PROJECTS.md) / [The argument behind the work](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/)
 
-Bridging the embodiment gap between scientific expertise and robotic execution, with
-sequential, baked-in, measurable QC.
+I earned my PhD at Oxford and co-first-authored a paper in *Nature Communications*. My background is in wet-lab work, single-cell and low-input genomics, automation, and ML.
 
-Oxford PhD / joint first author in *Nature Communications* / wet lab, single-cell and
-low-input genomics, automation, computation, and ML.
-
-[The argument](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/)
+In November 2026, my team Butterfly Effect won the past.dev challenge at the Iterate AI Research Hackathon for forecasting GPU rental prices. I built the critic that decided which changes to keep. It compared forecasts across 46 past dates and raised the bar with each trial. [Watch the demo](https://www.youtube.com/watch?v=oh6KsCcu3P0).
 
 ## Highlights
 
@@ -28,119 +19,34 @@ low-input genomics, automation, computation, and ML.
 <a href="https://github.com/di-omics/autonomous-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/highlight-4-dark.svg"><img src="assets/highlight-4-light.svg" width="24%" alt="4 stages of a closed loop, computed: it names which ones break. autonomous-lab"></picture></a>
 </p>
 
-- **[drugdev-gym](https://github.com/di-omics/drugdev-gym)** -- 10 simulated RL environments for cell assays and drug
-  development. Every reward is checked like an assay before it is scaled. Sister repo
-  [longevity-rl](https://github.com/di-omics/longevity-rl) asks the same of aging clocks.
-- **[sc-zprime](https://github.com/di-omics/sc-zprime)** -- an independent grader reproduces all 273 published verdicts
-  of scBench, LatchBio's public single-cell agent benchmark, then measures how well each pass
-  window separates the intended method from named traps. 6 example tasks, public runs only.
-  Siblings: [sc-controls](https://github.com/di-omics/sc-controls) and [epigenomics-evals](https://github.com/di-omics/epigenomics-evals).
-- **[robot-lab-handling](https://github.com/di-omics/robot-lab-handling)** -- robot models told in plain words to do
-  everyday lab chores, with 2 arms in simulation and the simulator as the only judge. 15
-  tasks so far. In the first batch, Dream-1 with no training passes 7 of 45 takes.
-- **[plr-mcp](https://github.com/di-omics/plr-mcp)** -- a liquid handler, a plate reader, a thermocycler, and a
-  heater-shaker as MCP tools any agent can call. Simulation by default, hardware permission
-  enforced in code.
-- **[plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)** -- capture, decode, and guarded replay
-  for instruments with no automation API. 5 playbooks so far, each with its status stated.
-- **[autonomous-lab](https://github.com/di-omics/autonomous-lab)** -- computes whether a lab can close a loop from
-  hypothesis to evidence across 4 stages, and names which ones break.
+- **Can we trust the grader?** My independent grader reproduced all 273 published verdicts across 6 scBench example tasks. Tracing the methods on 3 of those tasks showed how a shortcut could still earn a pass. [sc-zprime](https://github.com/di-omics/sc-zprime)
+- **What does a robot actually finish?** The scoring rules credited Dream-1 with 7 passes across 45 layouts for 15 simulated chores. One credited handover never happened. A companion project asks how much of that result a judge can recover from the camera images alone. [Handling results](https://github.com/di-omics/robot-lab-handling#results) / [Vision judges](https://github.com/di-omics/robot-lab-judge)
+- **What is an RL policy learning?** I test rewards against known outcomes in simulated drug-development tasks. In the first aging-clock benchmark, the model-based policy averaged 0.763 against the scripted reference's 0.890. Over 16 trials the gap was 2.7 standard errors, below the benchmark's threshold of 3. [Drug-development environments](https://github.com/di-omics/drugdev-gym) / [Clock results](https://github.com/di-omics/longevity-rl#aging-clock-benchmark)
+- **Can a lab close the loop?** I expose 4 instrument types as agent-callable tools, document instruments that lack an automation API, and test where a workflow breaks between hypothesis and evidence. [Instrument tools](https://github.com/di-omics/plr-mcp) / [Instrument playbooks](https://github.com/di-omics/plr-reverse-engineer) / [Loop evaluation](https://github.com/di-omics/autonomous-lab)
 
-Most of this is simulated, and each repository says so. There is no customer deployment and
-no full wet end-to-end biological endpoint yet.
+Most of the work here runs in simulation. Individual repositories distinguish simulated results, supervised operations on physical instruments, and measured biological outcomes.
 
 <details>
-<summary><b>Evidence boundary</b></summary>
+<summary><b>What the evidence labels mean</b></summary>
 
-Some named operations have run on physical instruments under supervision. 3 terms are
-used narrowly:
+- **Simulated** means the work ran without attached instruments.
+- **Hardware-executed under supervision** means a named operation ran on a physical instrument and its observed result was recorded.
+- **Wet/bio-validated** means measured biological data met a stated acceptance criterion.
 
-- **Simulated** -- exercised without attached instruments.
-- **Hardware-executed under supervision** -- a named interaction ran on a physical
-  instrument and its observed result is recorded.
-- **Wet/bio-validated** -- measured biological data met a stated acceptance criterion.
-
-A simulator result never becomes a hardware or biological claim by wording alone. The
-supervised run cards and observed failures are kept in `plr-tested` *(private)*, because a
-reader who cannot inspect the evidence should not be shown a claim resting on it.
+The supervised run cards and observed failures are kept privately. A full wet end-to-end biological outcome and a customer deployment are both still ahead.
 
 </details>
 
 <details>
-<summary><b>Now: what is in progress, and how far along</b></summary>
+<summary><b>Current projects and results</b></summary>
 
-| | The question | Status |
+| Project | Research question | Status |
 | --- | --- | --- |
 | [drugdev-gym](https://github.com/di-omics/drugdev-gym) | Can the context in bench scientists' heads be captured in a form a model can hill-climb on, with the reward proven true before it is scaled? | v0.1, simulation only. 10 environments; nothing has touched hardware, cells, or compounds |
-| [longevity-rl](https://github.com/di-omics/longevity-rl) | Did an intervention make simulated people biologically younger, or only move the clocks? 1 environment, 8 simulated clocks, 12 named mistakes | v0.1, simulation only. No real proteomic, methylation, clock, or trial data in the repo |
+| [longevity-rl](https://github.com/di-omics/longevity-rl) | Does planning improve batch selection? Can a policy tell when simulated aging clocks are misleading? | Across 100 campaigns, the planner and greedy baseline were statistically indistinguishable. Across 16 clock trials, the model-based policy had a lower mean reward than the scripted reference, with a gap below the 3-standard-error threshold. [Batch results](https://github.com/di-omics/longevity-rl#few-shot-batch-selection) / [Clock results](https://github.com/di-omics/longevity-rl#aging-clock-benchmark) |
 | [sc-controls](https://github.com/di-omics/sc-controls) | Do a benchmark task's own controls separate when they are run as code? | 1 scBench task of 195, on the public copy of its data: the method the task notes call correct passes, and the per-cell t-test fails |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Can a published paper be turned into evaluation tasks for AI agents, each with controls that test its grader? | 6 tasks from 1 paper I co-first-authored, in LatchBio's public eval format. Independent work, not part of EpiBench. The answer keys have not been reviewed by a person yet |
-| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | How far does a general robot model get on everyday lab handling when it is only told what to do? | simulation only. Batch 1, 18 Nov: Dream-1 zero-shot passes 7 of 45 takes over the first 15 two-arm tasks, 0 of 18 on the 6 plate tasks, and 2 of the 7 are flagged in the repo. No real-robot results |
+| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | How far does a general robot model get on everyday lab handling when it is only told what to do? | In the first simulated batch, the frozen rules credited Dream-1 with 7 passes across 45 task-layout pairs. Two of those passes are flagged. All 18 layouts for the 6 plate tasks were scored as failures. |
 | [robot-lab-judge](https://github.com/di-omics/robot-lab-judge) | From camera pictures alone, can a vision model tell whether a robot's lab chore passed? | simulation only, 475 dev scenes of 10 chores. 3 small open-weight models, zero-shot: the best scores 0.65 balanced accuracy and is at a coin flip on every plate chore. A linear probe, which is a test of the pictures and not a judge, was fitted on scenes from the same simulator and reaches 0.95, so the pictures hold the answer and the zero-shot models do not read it. The probe drops to between 0.70 and 0.81 when the pictures are lightly compressed, shifted by 3 pixels, or both. The sealed test split is unscored, and no person has reviewed the numbers yet |
-
-</details>
-
-<details>
-<summary><b>Repositories, by theme</b></summary>
-
-**Evals**
-
-| | |
-| --- | --- |
-| [sc-zprime](https://github.com/di-omics/sc-zprime) | assay-style validation of scBench, LatchBio's public single-cell agent benchmark: how well each pass window separates the intended method from named traps |
-| [sc-controls](https://github.com/di-omics/sc-controls) | scripted positive and negative controls for 1 scBench task, run on the public copy of its data and graded with the task's own window |
-| [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | 6 epigenomics eval tasks for AI agents, built from 1 published paper, each with the scripted controls its grader was tested against; independent work, not part of LatchBio's EpiBench |
-| [robot-lab-handling](https://github.com/di-omics/robot-lab-handling) | zero-shot robot models on everyday lab handling, 2 YAM arms in simulation, scored from the simulator state; 15 tasks so far |
-| [robot-lab-judge](https://github.com/di-omics/robot-lab-judge) | vision judges on the robot-lab-handling chores: from camera pictures alone, did the chore pass; small open-weight models zero-shot so far, with a sealed test split |
-| [robot-policy-evals](https://github.com/di-omics/robot-policy-evals) | a known-truth audit of how robot-policy checkpoints get picked and reported; plan stage, nothing run yet |
-| [liquid-policy-robustness](https://github.com/di-omics/liquid-policy-robustness) | liquid neural networks against matched-size MLPs and LSTMs under sensor noise; the noise sweep has not been run |
-| [benchmarks](https://github.com/di-omics/benchmarks) | how the July 2026 lab-automation and omics repositories are evaluated, and which numbers are still pending |
-
-**RL environments and ML**
-
-| | |
-| --- | --- |
-| [drugdev-gym](https://github.com/di-omics/drugdev-gym) | RL environments for cell assays and drug development on a simulated liquid handler, with every reward checked like an assay |
-| [longevity-rl](https://github.com/di-omics/longevity-rl) | 1 RL environment for aging clocks: did the intervention make simulated people younger, or only move the clocks; sister repo to drugdev-gym, trained on nothing real |
-| [ml-design-loops](https://github.com/di-omics/ml-design-loops) | ESM-2 protein design, Bayesian assay optimization under a conformal gate, and an agentic design-build-test-learn engine; simulation only |
-| [ml-foundations](https://github.com/di-omics/ml-foundations) | a first PyTorch training project, kept as a lab notebook |
-
-**Autonomous lab**
-
-| | |
-| --- | --- |
-| [autonomous-lab](https://github.com/di-omics/autonomous-lab) | evidence and permission for autonomous labs: computes whether a loop closes, and names which stage breaks |
-| [plr-mcp](https://github.com/di-omics/plr-mcp) | typed, agent-callable lab tools; the arming model is enforced in code, not documented |
-| [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | capture, decode, guarded replay for no-API instruments; incomplete maps stay blocked from actuation |
-| [agentic-lab-guide](https://github.com/di-omics/agentic-lab-guide) | a step-by-step guide from an instrument to an instrument driven by an agent, with an expert's tunable liquid-handling parameters; tested in simulation only |
-| `plr-tested` *(private)* | supervised physical-instrument run cards and observed failures, kept as evidence |
-
-**Robotics and vision**
-
-| | |
-| --- | --- |
-| [plr-lab-robot](https://github.com/di-omics/plr-lab-robot) | a simulation backend for PyLabRobot's arm API, which upstream ships without |
-| [lab-cv](https://github.com/di-omics/lab-cv) | detection, state classification, tracking, camera-verified liquid handling, and microscopy image analysis; every demo scored blind against a plant |
-| [awesome-wetlab-cv](https://github.com/di-omics/awesome-wetlab-cv) | curated CV for labs that see, decide, and act -- with CI that checks every link |
-| [robotics-devkit](https://github.com/di-omics/robotics-devkit) | plugin marketplace and template for the code-to-simulation-to-real-robot ladder, with MCP tools and test agents |
-
-**Instruments and protocols**
-
-| | |
-| --- | --- |
-| [opentrons-drivers](https://github.com/di-omics/opentrons-drivers) | serial GCode for the OT-One Smoothieboard, HTTP for OT-2 and Flex, with a simulator |
-| [ot-flex-automation](https://github.com/di-omics/ot-flex-automation) | Opentrons Flex workflows for whole-genome sequencing, methylation sequencing, and TIP-seq, with explicit off-deck handoffs and validation status |
-| [fullstack-omics](https://github.com/di-omics/fullstack-omics) | simulator-only scRNA-seq and whole-genome sequencing workflows, from planning through analysis handoffs |
-| [omics-demos](https://github.com/di-omics/omics-demos) | synthetic, ground-truth demos for scRNA-seq, methylation sequencing, and PCR enrichment QC; no wet-lab claims |
-| [plr-minimum-effective](https://github.com/di-omics/plr-minimum-effective) | finds the cheapest sequencing library prep that still gives a callable answer: unique reads per dollar, gated on in-process CV |
-| [spatial-flow](https://github.com/di-omics/spatial-flow) | spatial-biology lab operations: specimen lineage and TMA batch-balance planning |
-
-**Hackathons**
-
-| | |
-| --- | --- |
-| Butterfly Effect *(team repo, private)* | 1st place in the past.dev challenge, Iterate AI Research Hackathon, November 2026: I contributed the critic of the research loop |
-| [bay-hack](https://github.com/di-omics/bay-hack) | verified tube access: no verified opening, no pipetting -- enforced in code and in the sealed receipt |
-| [someplace](https://github.com/di-omics/someplace) | a voice companion inside a generated world |
 
 </details>
