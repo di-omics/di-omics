@@ -49,10 +49,10 @@
 | Project | What you can inspect |
 | --- | --- |
 | [opentrons-drivers](https://github.com/di-omics/opentrons-drivers) | Drivers and a simulator for the OT-One, OT-2, and Flex, with tip-pickup calibration findings. |
-| [ot-flex-automation](https://github.com/di-omics/ot-flex-automation) | Opentrons Flex sequencing workflows with off-deck handoffs and validation status documented. |
+| [ot-flex-automation](https://github.com/di-omics/ot-flex-automation) | Deck movements and operator handoffs for sequencing on the Opentrons Flex. The public whole-genome and methylation profiles use water for motion tests. |
 | [fullstack-omics](https://github.com/di-omics/fullstack-omics) | Simulated single-cell RNA and whole-genome sequencing workflows from planning to analysis handoff. |
 | [omics-demos](https://github.com/di-omics/omics-demos) | Synthetic sequencing data with known answers for checking omics analyses. [Browse the demos](https://di-omics.github.io/omics-demos/). |
-| [plr-minimum-effective](https://github.com/di-omics/plr-minimum-effective) | A study of sequencing cost per usable read, with in-process quality checks. |
+| [plr-minimum-effective](https://github.com/di-omics/plr-minimum-effective) | A simulated study of unique sequencing reads per dollar, scored against a known optimum. |
 | [spatial-flow](https://github.com/di-omics/spatial-flow) | A synthetic spatial-biology lab demo for following specimen identity, reviewing images, and balancing batches. |
 
 ## Hackathons
