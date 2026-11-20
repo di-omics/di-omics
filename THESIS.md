@@ -11,7 +11,7 @@ the goal, autonomy is not the goal, and neither is a robot that runs overnight. 
 runs a thousand plates a day and cannot tell which of them is real has bought motion, not
 information.
 
-Three things cap that number, and they are not the ones usually shopped for.
+3 things cap that number, and they are not the ones usually shopped for.
 
 **The ceiling is set by design, not by spend.** If attribution to the unit you are asking
 about has been destroyed, a per-unit question is unanswerable at any budget: pool 96 wells
@@ -60,11 +60,11 @@ downgraded when that path does not exist, and benchmarks a robot must meet befor
 trusted with a task. An operation nobody has benchmarked is untrusted by default, which is
 the opposite of the usual convention and the correct one.
 
-## Four stages, not one number
+## 4 stages, not 1 number
 
 Executing a protocol is the stage everyone measures. A lab that executes perfectly and cannot
 tell a good plate from a bad one is not running an experiment, it is moving liquid. Closing
-a single loop takes four things, and they fail independently:
+a single loop takes 4 things, and they fail independently:
 
 | Stage | The question | What failure means |
 | --- | --- | --- |
@@ -73,7 +73,7 @@ a single loop takes four things, and they fail independently:
 | **Decide** | would anything notice when it goes wrong? | a detection path for failures that destroy material |
 | **Record** | could it be proven and replayed afterwards? | barcodes, or an arm that reports its moves |
 
-On the single-cell genomics reference workflow, all four currently break, for four different
+On the single-cell genomics reference workflow, all 4 currently break, for 4 different
 reasons. Collapsing that into one autonomy percentage would hide which budget to spend.
 `autonomous-lab loop` computes it.
 
@@ -84,7 +84,7 @@ they have to be built in, because each one is what makes the next one meaningful
 
 **1 / Move it.** Multi-instrument orchestration and the arm that carries plates between
 boxes. One plate at a time wastes the instruments, so the moment a second enters, a set of
-constraints appears that no single-run report can see: two plates want the same liquid
+constraints appears that no single-run report can see: 2 plates want the same liquid
 handler, a human is needed at 2am, a finished plate sits on a deck nobody can clear.
 `autonomous-lab schedule` computes what serializes without inventing a single duration --
 the serialization point is whichever instrument owns the most steps, which is true at any
@@ -99,7 +99,7 @@ amount of training data separates a well of active enzyme from one of denatured 
 because the photons are identical.
 
 **3 / Gate what vision cannot reach.** This is the composition that makes the whole thing
-work, and it is why the two are one layer rather than two. Where a camera is physically
+work, and it is why seeing and gating are one layer. Where a camera is physically
 incapable, an assay is the *only* remaining option -- a plate read, a bioanalyzer trace, a
 quantification step. So an invisible failure with no gate behind it is uncovered, and no CV
 budget will ever change that. Deploying a newer model has a ceiling, and the ceiling is
@@ -123,7 +123,7 @@ machine measured against that demonstration.** That is the step between "the rob
 the script" and "the robot performs the task as well as the person who taught it."
 
 The honest core of it is that an expert demonstration is *data, not authority*. A scientist
-doing something twice is not a specification -- it is two observations with a spread, and
+doing something twice is not a specification -- it is 2 observations with a spread, and
 the spread is the information. Most operations have no expert envelope at all, and that list
 is the real backlog of an automation programme. Nobody writes it down. This does.
 
