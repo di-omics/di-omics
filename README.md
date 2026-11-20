@@ -6,7 +6,7 @@ I build RL environments, evals and robot benchmarks for biology, and I check eac
 
 [Projects by theme](PROJECTS.md) / [The argument behind the work](THESIS.md) / [LinkedIn](https://www.linkedin.com/in/di-hu-phd-4049401a5/)
 
-I earned my PhD at Oxford and co-first-authored [a paper in *Nature Communications*](https://doi.org/10.1038/s41467-025-58137-2), which I later turned into [6 evaluation tasks for AI agents](https://github.com/di-omics/epigenomics-evals). My background is in wet-lab work, single-cell and low-input genomics, automation, and ML.
+I earned my PhD at Oxford and co-first-authored [a paper in *Nature Communications*](https://doi.org/10.1038/s41467-025-58137-2), which I later turned into [6 evaluation tasks for AI agents](https://github.com/di-omics/epigenomics-evals). My background is in wet-lab work, single-cell and low-input genomics, automation, and ML. Most recently I built an automated biology lab from an empty bench in 3 weeks: more than 10x daily compound testing, and assay CV from about 6% to under 1%.
 
 In November 2026, my team Butterfly Effect won the past.dev challenge at the Iterate AI Research Hackathon for forecasting GPU rental prices. I contributed the critic that decided which changes to keep. It compared forecasts across 46 past dates and raised the bar with each trial. [Watch the demo](https://www.youtube.com/watch?v=oh6KsCcu3P0).
 
@@ -24,12 +24,12 @@ In November 2026, my team Butterfly Effect won the past.dev challenge at the Ite
 - **What does a robot actually finish?** On 15 simulated lab chores, 3 layouts each, the frozen scoring rules credited Dream-1, a general robot model from Dream Labs, with 7 passes in 45 task-layout pairs and none on the 6 plate chores; 1 of the 7 is a handover that never happened. A companion project asks whether a vision model can judge 10 of these chores from camera pictures alone. [Run table](https://github.com/di-omics/robot-lab-handling/blob/main/runs/2026-11-18-zero-shot/results.md) / [Vision judges](https://github.com/di-omics/robot-lab-judge)
 - **Can an AI agent run the experiment, not just analyze it?** Public benchmarks for biology agents mostly grade data analysis. In 3 of my 6 liquid-handling tasks, the agent writes a robot plan and the grader runs it on a simulated liquid handler, checking what ends up in the wells; 61 scripted controls check the graders. Alongside the evals: 4 instrument types exposed as agent-callable tools, playbooks for instruments with no published automation API, and a loop evaluation that names where a workflow breaks between hypothesis and evidence. [Lab automation evals](https://github.com/di-omics/lab-automation-evals) / [Instrument tools](https://github.com/di-omics/plr-mcp) / [Instrument playbooks](https://github.com/di-omics/plr-reverse-engineer) / [Loop evaluation](https://github.com/di-omics/autonomous-lab)
 
-Most of the work here runs in simulation, and each repository says so.
+Most of the public work here runs in simulation, and each repository says so.
 
 <details>
 <summary><b>What is simulated and what is not</b></summary>
 
-Every public result here is simulated unless its README says otherwise. The run cards from supervised runs on physical instruments are kept privately, and no wet end-to-end biological result is claimed yet.
+Every public result here is simulated unless its README says otherwise. The run cards from supervised runs on physical instruments are kept privately, and no wet end-to-end biological result is claimed in these repositories yet.
 
 </details>
 
