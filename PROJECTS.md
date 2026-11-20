@@ -11,6 +11,7 @@
 | [sc-zprime](https://github.com/di-omics/sc-zprime) | An independent grader reproduces published scBench and SpatialBench verdicts. Tracing the methods behind the answers shows where shortcuts earn credit. |
 | [sc-controls](https://github.com/di-omics/sc-controls) | Scripted positive and negative controls run on the public data for one scBench task and are graded against its published pass window. |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | Six analysis decisions from a published epigenomics paper, written as agent tasks with controls for each grader. |
+| [lab-automation-evals](https://github.com/di-omics/lab-automation-evals) | Liquid-handling tasks for AI agents. Robot plans run on a simulated liquid handler and are graded on what ends up in the wells, with controls for every grader and a plate-reader grader for running the same plan on a real robot. |
 | [benchmarks](https://github.com/di-omics/benchmarks) | The metrics, quality checks, and pending results for the July 2026 lab automation and omics projects. [Read the evaluation notes](https://di-omics.github.io/benchmarks/). |
 
 ## Reinforcement learning and ML
