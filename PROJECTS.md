@@ -48,7 +48,6 @@
 
 | Project | What you can inspect |
 | --- | --- |
-| [el406-ai-backend](https://github.com/di-omics/el406-ai-backend) | A Python backend for the EL406 plate washer/dispenser. Plans are checked before dispatch to an adapter. Validation to date is in simulation. |
 | [opentrons-drivers](https://github.com/di-omics/opentrons-drivers) | Drivers and a simulator for the OT-One, OT-2, and Flex, with tip-pickup calibration findings. |
 | [ot-flex-automation](https://github.com/di-omics/ot-flex-automation) | Opentrons Flex sequencing workflows with off-deck handoffs and validation status documented. |
 | [fullstack-omics](https://github.com/di-omics/fullstack-omics) | Simulated single-cell RNA and whole-genome sequencing workflows from planning to analysis handoff. |
@@ -61,6 +60,6 @@
 | Project | What you can inspect |
 | --- | --- |
 | [bay-hack](https://github.com/di-omics/bay-hack) | TubeProof checks that a tube is open before allowing the next simulated liquid-handling step. [Try the walkthrough](https://di-omics.github.io/bay-hack/). |
-| [someplace](https://github.com/di-omics/someplace) | A voice companion inside a generated world, built at Hack with VoiceOS. |
+| [someplace](https://github.com/di-omics/someplace) | A concept and pitch page for a voice companion inside a generated world, from Hack with VoiceOS. |
 
 The public [PyLabRobot fork](https://github.com/di-omics/pylabrobot) tracks work based on the [upstream SDK](https://github.com/PyLabRobot/pylabrobot).
