@@ -29,11 +29,13 @@ In November 2026, my team Butterfly Effect won the past.dev challenge at the Ite
 The lab side of this work is one path, with a public repository for each step.
 
 1. **Get the instrument talking.** For instruments with no published automation API: capture the vendor software's traffic, decode it, and replay it behind safety guards. Playbooks for 5 instruments so far. [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer)
-2. **Give the agent one interface.** A liquid handler, a plate reader, a thermocycler and a heater-shaker as tools any AI agent can call. Simulation by default; hardware permission is enforced in code. [plr-mcp](https://github.com/di-omics/plr-mcp)
+2. **Give the agent one interface.** A liquid handler, a plate reader, a thermocycler and a heater-shaker as tools any AI agent can call. Simulation by default; on a real liquid handler nothing moves until a tool call passes `home=true` or `confirm=true`. [plr-mcp](https://github.com/di-omics/plr-mcp)
 3. **Add the scientist's judgment, then check the liquid.** A step-by-step guide from first contact with a liquid handler to tunable liquid-handling parameters and a dye plate that is read, scored and used to readjust. The example reads are synthetic. [Agentic Lab Guide](https://di-omics.github.io/agentic-lab-guide/)
 4. **Close the loop and name where it breaks.** Computes whether a lab can go from hypothesis to evidence across 4 stages, with QC gates, scheduling and provenance. [autonomous-lab](https://github.com/di-omics/autonomous-lab)
 5. **Grade the agent on the run, not only on the analysis.** 6 liquid-handling tasks whose graders are checked by 61 scripted controls. [lab-automation-evals](https://github.com/di-omics/lab-automation-evals)
 6. **Hold the science to the same bar.** 6 analysis decisions from a paper I co-first-authored, as evaluation tasks, each with scripted controls that test its grader. [epigenomics-evals](https://github.com/di-omics/epigenomics-evals)
+
+Beside this path sit 2 more instrument projects. In [agentic-lcms-hplc-nmr](https://github.com/di-omics/agentic-lcms-hplc-nmr), an agent requests LC-MS, HPLC and NMR measurements by naming an approved method, with simulators standing in for the instruments and their software ([run page](https://di-omics.github.io/agentic-lcms-hplc-nmr/demo/)). [plr-lab-world](https://github.com/di-omics/plr-lab-world) shows how software reaches 9 instrument stations of a lab hall, all simulated, with the 27 recorded runs replayed step by step ([replay](https://di-omics.github.io/plr-lab-world/replay.html)).
 
 Most of the public work here runs in simulation, and each repository says so.
 

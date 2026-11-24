@@ -11,7 +11,7 @@
 | [sc-zprime](https://github.com/di-omics/sc-zprime) | An independent grader reproduces published scBench and SpatialBench verdicts. Tracing the methods behind the answers shows where shortcuts earn credit. |
 | [sc-controls](https://github.com/di-omics/sc-controls) | Scripted positive and negative controls run on the public data for 1 scBench task and are graded against its published pass window. |
 | [epigenomics-evals](https://github.com/di-omics/epigenomics-evals) | 6 analysis decisions from a published epigenomics paper, written as agent tasks with controls for each grader. |
-| [lab-automation-evals](https://github.com/di-omics/lab-automation-evals) | Liquid-handling tasks for AI agents. Robot plans run on a simulated liquid handler and are graded on what ends up in the wells, with controls for every grader and a plate-reader grader for running the same plan on a real robot. |
+| [lab-automation-evals](https://github.com/di-omics/lab-automation-evals) | Liquid-handling tasks for AI agents. Robot plans run on a simulated liquid handler and are graded on what ends up in the wells, with controls for every grader and a plate-reader grader meant for the same plan on a real robot; so far it has graded only simulated reads. |
 
 ## Reinforcement learning and ML
 
@@ -40,7 +40,7 @@
 | Project | What you can inspect |
 | --- | --- |
 | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | A 4-stage evaluation of whether a workflow can go from hypothesis to evidence. It identifies where the loop breaks. |
-| [plr-mcp](https://github.com/di-omics/plr-mcp) | 4 instrument types exposed as MCP tools, with simulation by default and permission checks for physical hardware. |
+| [plr-mcp](https://github.com/di-omics/plr-mcp) | 4 instrument types exposed as MCP tools. Simulation by default; on a real liquid handler nothing moves until a tool call passes `home=true` or `confirm=true`. |
 | [agentic-lcms-hplc-nmr](https://github.com/di-omics/agentic-lcms-hplc-nmr) | LC-MS, HPLC and NMR as 5 MCP tools that work through the vendor software, with a hash-chained ledger and a person deciding when a lost reply cannot be resolved. Simulators stand in for the instruments, and the vendor call names are placeholders to bind at install. |
 | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | Playbooks for 5 lab instruments without a published automation API, each with its own evidence and validation status. |
 | [plr-lab-world](https://github.com/di-omics/plr-lab-world) | 9 simulated lab stations, 1 PyLabRobot example each, sorted by whether the instrument is already decoded, has a maker SDK, or still needs decoding. A [replay page](https://di-omics.github.io/plr-lab-world/replay.html) plays all 27 recorded simulated runs step by step. Nothing ran on a physical instrument. |
