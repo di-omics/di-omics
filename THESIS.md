@@ -10,7 +10,7 @@ controls that must separate, traps that must fail, repeats that must agree.
 [drugdev-gym](https://github.com/di-omics/drugdev-gym) does this for the rewards of 10
 drug-development environments, [sc-zprime](https://github.com/di-omics/sc-zprime) for 2
 published agent benchmarks in single-cell and spatial biology, and
-[robot-lab-handling](https://github.com/di-omics/robot-lab-handling) for 15 robot lab chores.
+[robot-lab-handling](https://github.com/di-omics/robot-lab-handling) for 19 robot lab chores.
 The same discipline decides what an autonomous lab can be trusted to do, which is the rest of
 this page.
 

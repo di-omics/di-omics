@@ -41,7 +41,9 @@
 | --- | --- |
 | [autonomous-lab](https://github.com/di-omics/autonomous-lab) | A 4-stage evaluation of whether a workflow can go from hypothesis to evidence. It identifies where the loop breaks. |
 | [plr-mcp](https://github.com/di-omics/plr-mcp) | 4 instrument types exposed as MCP tools, with simulation by default and permission checks for physical hardware. |
+| [agentic-lcms-hplc-nmr](https://github.com/di-omics/agentic-lcms-hplc-nmr) | LC-MS, HPLC and NMR as 5 MCP tools that work through the vendor software, with a hash-chained ledger and a person deciding when a lost reply cannot be resolved. Simulators stand in for the instruments, and the vendor call names are placeholders to bind at install. |
 | [plr-reverse-engineer](https://github.com/di-omics/plr-reverse-engineer) | Playbooks for 5 lab instruments without a published automation API, each with its own evidence and validation status. |
+| [plr-lab-world](https://github.com/di-omics/plr-lab-world) | 9 simulated lab stations, 1 PyLabRobot example each, sorted by whether the instrument is already decoded, has a maker SDK, or still needs decoding. A [replay page](https://di-omics.github.io/plr-lab-world/replay.html) plays all 27 recorded simulated runs step by step. Nothing ran on a physical instrument. |
 | [agentic-lab-guide](https://github.com/di-omics/agentic-lab-guide) | A guide to agent-driven instruments, starting with the Hamilton STAR and STARlet in simulation. [Read the guide](https://di-omics.github.io/agentic-lab-guide/). |
 
 ## Instruments and omics
